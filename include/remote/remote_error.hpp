@@ -54,7 +54,7 @@ public:
 
 	error_code code() const { return m_code; }
 
-	virtual char const* what() const BOOST_NOEXCEPT
+	virtual char const* what() const BOOST_NOEXCEPT_OR_NOTHROW
 	{
 		return std::runtime_error::what();
 	}

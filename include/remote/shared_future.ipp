@@ -35,7 +35,7 @@ shared_future<T>::shared_future(BOOST_RV_REF(shared_future) src)
 
 template<typename T>
 shared_future<T>::shared_future(BOOST_RV_REF(future<T>) src)
-: m_impl(src.release())
+: m_impl(boost::move(src.release()))
 {}
 
 template<typename T>
@@ -61,7 +61,7 @@ shared_future<T>& shared_future<T>::operator = (BOOST_RV_REF(shared_future) src)
 template<typename T>
 shared_future<T>& shared_future<T>::operator = (BOOST_RV_REF(future<T>) src)
 {
-	m_impl = src.release();
+	m_impl = boost::move(src.release());
 	return *this;
 }
 

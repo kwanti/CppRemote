@@ -30,24 +30,6 @@ server::server(io_runner& runner)
 	initialize(runner);
 }
 
-server::server(BOOST_RV_REF(server) src)
-: pool_node(boost::move(static_cast<pool_node&>(src)))
-, m_impl(boost::move(src.m_impl))
-{
-	src.m_impl.reset();
-}
-
-server& server::operator = (BOOST_RV_REF(server) src)
-{
-	if(this != &src)
-	{
-		pool_node::operator = (boost::move(static_cast<pool_node&>(src)));
-		m_impl = boost::move(src.m_impl);
-		src.m_impl.reset();
-	}
-	return *this;
-}
-
 server::~server()
 {
 	if(m_impl)

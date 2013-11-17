@@ -36,7 +36,7 @@ public:
 		BOOST_ASSERT(this == &this_ref());
 	}
 
-	virtual char const* what() const BOOST_NOEXCEPT
+	virtual char const* what() const BOOST_NOEXCEPT_OR_NOTHROW
 	{
 		return boost::archive::archive_exception::what();
 	}

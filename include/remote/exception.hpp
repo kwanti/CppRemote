@@ -9,6 +9,8 @@
 #ifndef __REMOTE_EXCEPTION_H__
 #define __REMOTE_EXCEPTION_H__
 
+#include <remote/detail/config.hpp>
+
 #include <boost/smart_ptr/shared_ptr.hpp>
 #include <boost/smart_ptr/make_shared.hpp>
 #include <exception>
@@ -24,7 +26,7 @@ class exception
 {
 public:
 	virtual ~exception() throw() {}
-	virtual char const* what() const BOOST_NOEXCEPT = 0;
+	virtual char const* what() const BOOST_NOEXCEPT_OR_NOTHROW = 0;
 
 protected:
 	virtual void throw_this() const = 0;

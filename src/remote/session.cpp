@@ -37,24 +37,6 @@ session::session(detail::comm_link_ptr const& link)
 , m_link(link)
 {}
 
-session::session(BOOST_RV_REF(session) src)
-: pool_node(boost::move(static_cast<pool_node&>(src)))
-, m_link(boost::move(src.m_link))
-{
-	src.m_link.reset();
-}
-
-session& session::operator = (BOOST_RV_REF(session) src)
-{
-	if(this != &src)
-	{
-		pool_node::operator = (boost::move(static_cast<pool_node&>(src)));
-		m_link = boost::move(src.m_link);
-		src.m_link.reset();
-	}
-	return *this;
-}
-
 session::~session()
 {
 	if(m_link)

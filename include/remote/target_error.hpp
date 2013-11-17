@@ -66,7 +66,7 @@ public:
 
 	std::string const& name() const { return m_name; }
 
-	virtual char const* what() const BOOST_NOEXCEPT
+	virtual char const* what() const BOOST_NOEXCEPT_OR_NOTHROW
 	{
 		return std::runtime_error::what();
 	}
@@ -97,7 +97,7 @@ public:
 		BOOST_ASSERT(this == &this_ref());
 	}
 
-	virtual char const* what() const BOOST_NOEXCEPT
+	virtual char const* what() const BOOST_NOEXCEPT_OR_NOTHROW
 	{
 		return std::runtime_error::what();
 	}

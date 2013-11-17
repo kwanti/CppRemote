@@ -34,8 +34,25 @@ public:
 	session();
 	explicit session(io_runner& runner);
 	explicit session(detail::comm_link_ptr const& link);
-	session(BOOST_RV_REF(session) src);
-	session& operator = (BOOST_RV_REF(session) src);
+
+	session(BOOST_RV_REF(session) src)
+	: pool_node(boost::move(static_cast<pool_node&>(src)))
+	, m_link(boost::move(src.m_link))
+	{
+		src.m_link.reset();
+	}
+
+	session& operator = (BOOST_RV_REF(session) src)
+	{
+		if(this != &src)
+		{
+			pool_node::operator = (boost::move(static_cast<pool_node&>(src)));
+			m_link = boost::move(src.m_link);
+			src.m_link.reset();
+		}
+		return *this;
+	}
+
 	~session();
 
 	void start(binding const& _binding, handler const& _handler = default_handler);

@@ -18,14 +18,25 @@ namespace remote
 
 class pool_node
 {
-	BOOST_MOVABLE_BUT_NOT_COPYABLE(pool_node)
+    BOOST_MOVABLE_BUT_NOT_COPYABLE(pool_node)
 public:
 
 	pool_node();
 	explicit pool_node(io_runner& runner);
 	explicit pool_node(detail::pool_node_ptr const& node);
-	pool_node(BOOST_RV_REF(pool_node) src);
-	pool_node& operator = (BOOST_RV_REF(pool_node) src);
+
+	pool_node(BOOST_RV_REF(pool_node) src)
+	: m_node(boost::move(src.m_node))
+	{}
+
+	pool_node& operator = (BOOST_RV_REF(pool_node) src)
+	{
+		if(this != &src)
+		{
+			m_node = boost::move(src.m_node);
+		}
+		return *this;
+	}
 
 
 	template<typename Proxy, typename Target>

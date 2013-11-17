@@ -6,3 +6,13 @@
 //
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
+
+#include <boost/config.hpp>
+
+#ifndef BOOST_NOEXCEPT_OR_NOTHROW
+#  ifdef BOOST_NO_NOEXCEPT
+#    define BOOST_NOEXCEPT_OR_NOTHROW throw()
+#  else
+#    define BOOST_NOEXCEPT_OR_NOTHROW noexcept
+#  endif
+#endif

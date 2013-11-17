@@ -6,7 +6,6 @@
 //
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
-
 #include <remote/pool_node.hpp>
 #include <remote/io_runner.hpp>
 
@@ -29,19 +28,6 @@ pool_node::pool_node(io_runner& runner)
 pool_node::pool_node(detail::pool_node_ptr const& node)
 : m_node(node)
 {}
-
-pool_node::pool_node(BOOST_RV_REF(pool_node) src)
-: m_node(boost::move(src.m_node))
-{}
-
-pool_node& pool_node::operator = (BOOST_RV_REF(pool_node) src)
-{
-	if(this != &src)
-	{
-		m_node = boost::move(src.m_node);
-	}
-	return *this;
-}
 
 void pool_node::unbind_name(std::string const& name)
 {

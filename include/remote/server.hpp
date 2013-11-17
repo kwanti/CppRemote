@@ -35,8 +35,25 @@ public:
 public:
 	server();
 	explicit server(io_runner& runner);
-	server(BOOST_RV_REF(server) src);
-	server& operator = (BOOST_RV_REF(server) src);
+
+	server(BOOST_RV_REF(server) src)
+	: pool_node(boost::move(static_cast<pool_node&>(src)))
+	, m_impl(boost::move(src.m_impl))
+	{
+		src.m_impl.reset();
+	}
+
+	server& operator = (BOOST_RV_REF(server) src)
+	{
+		if(this != &src)
+		{
+			pool_node::operator = (boost::move(static_cast<pool_node&>(src)));
+			m_impl = boost::move(src.m_impl);
+			src.m_impl.reset();
+		}
+		return *this;
+	}
+
 	~server();
 
 	void start(binding const& _binding, handler const& _handler = default_handler);
