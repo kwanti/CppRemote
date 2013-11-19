@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="remote" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/remote" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/remote" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/Release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseMin">
+				<Option output="bin/ReleaseMin/remote" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="obj/ReleaseMin/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DREMOTE_USER_REGISTER_ARCHIVE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-D_WIN32_WINNT=0x0501" />
+			<Add option="-DBOOST_THREAD_USE_LIB" />
+			<Add option="-DASIO_ENABLE_CANCELIO" />
+			<Add directory="../../include" />
+		</Compiler>
+		<Unit filename="../../include/remote/archive/archives.hpp" />
+		<Unit filename="../../include/remote/archive/binary_iarchive.hpp" />
+		<Unit filename="../../include/remote/archive/binary_oarchive.hpp" />
+		<Unit filename="../../include/remote/archive/pointer_tracker.hpp" />
+		<Unit filename="../../include/remote/archive/text_iarchive.hpp" />
+		<Unit filename="../../include/remote/archive/text_iarchive_impl.hpp" />
+		<Unit filename="../../include/remote/archive/text_iarchive_impl.ipp" />
+		<Unit filename="../../include/remote/archive/text_oarchive.hpp" />
+		<Unit filename="../../include/remote/archive/xml_iarchive.hpp" />
+		<Unit filename="../../include/remote/archive/xml_iarchive_impl.hpp" />
+		<Unit filename="../../include/remote/archive/xml_iarchive_impl.ipp" />
+		<Unit filename="../../include/remote/archive/xml_oarchive.hpp" />
+		<Unit filename="../../include/remote/archive_error.hpp" />
+		<Unit filename="../../include/remote/array.hpp" />
+		<Unit filename="../../include/remote/attribute.hpp" />
+		<Unit filename="../../include/remote/binding.hpp" />
+		<Unit filename="../../include/remote/bindings/acceptor.hpp" />
+		<Unit filename="../../include/remote/bindings/basic_acceptor.hpp" />
+		<Unit filename="../../include/remote/bindings/basic_binding.hpp" />
+		<Unit filename="../../include/remote/bindings/basic_channel.hpp" />
+		<Unit filename="../../include/remote/bindings/basic_serializer.hpp" />
+		<Unit filename="../../include/remote/bindings/binary_serializer.hpp" />
+		<Unit filename="../../include/remote/bindings/binding.hpp" />
+		<Unit filename="../../include/remote/bindings/buffer.hpp" />
+		<Unit filename="../../include/remote/bindings/buffer_pool.hpp" />
+		<Unit filename="../../include/remote/bindings/channel.hpp" />
+		<Unit filename="../../include/remote/bindings/fwd.hpp" />
+		<Unit filename="../../include/remote/bindings/named_pipe_acceptor.hpp" />
+		<Unit filename="../../include/remote/bindings/named_pipe_endpoint.hpp" />
+		<Unit filename="../../include/remote/bindings/named_pipe_transport.hpp" />
+		<Unit filename="../../include/remote/bindings/tcp_acceptor.hpp" />
+		<Unit filename="../../include/remote/bindings/tcp_endpoint.hpp" />
+		<Unit filename="../../include/remote/bindings/tcp_transport.hpp" />
+		<Unit filename="../../include/remote/bindings/text_serializer.hpp" />
+		<Unit filename="../../include/remote/bindings/udp_acceptor.hpp" />
+		<Unit filename="../../include/remote/bindings/udp_endpoint.hpp" />
+		<Unit filename="../../include/remote/bindings/udp_transport.hpp" />
+		<Unit filename="../../include/remote/bindings/xml_serializer.hpp" />
+		<Unit filename="../../include/remote/detail/call.hpp" />
+		<Unit filename="../../include/remote/detail/comm_link.hpp" />
+		<Unit filename="../../include/remote/detail/comm_link_invoke.ipp" />
+		<Unit filename="../../include/remote/detail/comm_request.hpp" />
+		<Unit filename="../../include/remote/detail/config.hpp" />
+		<Unit filename="../../include/remote/detail/counter.hpp" />
+		<Unit filename="../../include/remote/detail/direct_link.hpp" />
+		<Unit filename="../../include/remote/detail/fwd.hpp" />
+		<Unit filename="../../include/remote/detail/marshal.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_array.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_list.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_map.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_pair.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_set.hpp" />
+		<Unit filename="../../include/remote/detail/marshal_vector.hpp" />
+		<Unit filename="../../include/remote/detail/out_param.hpp" />
+		<Unit filename="../../include/remote/detail/param.hpp" />
+		<Unit filename="../../include/remote/detail/pointer_cast.hpp" />
+		<Unit filename="../../include/remote/detail/pool_link.hpp" />
+		<Unit filename="../../include/remote/detail/pool_node.hpp" />
+		<Unit filename="../../include/remote/detail/proxy.hpp" />
+		<Unit filename="../../include/remote/detail/proxy_pool.hpp" />
+		<Unit filename="../../include/remote/detail/proxy_pool.ipp" />
+		<Unit filename="../../include/remote/detail/result.hpp" />
+		<Unit filename="../../include/remote/detail/serialize_param.hpp" />
+		<Unit filename="../../include/remote/detail/serialize_primitive.hpp" />
+		<Unit filename="../../include/remote/detail/server.hpp" />
+		<Unit filename="../../include/remote/detail/service.hpp" />
+		<Unit filename="../../include/remote/detail/service_invoke.ipp" />
+		<Unit filename="../../include/remote/detail/service_pool.hpp" />
+		<Unit filename="../../include/remote/detail/service_pool.ipp" />
+		<Unit filename="../../include/remote/detail/stack_allocate.hpp" />
+		<Unit filename="../../include/remote/detail/type_id.hpp" />
+		<Unit filename="../../include/remote/detail/type_traits.hpp" />
+		<Unit filename="../../include/remote/detail/utility.hpp" />
+		<Unit filename="../../include/remote/exception.hpp" />
+		<Unit filename="../../include/remote/future.hpp" />
+		<Unit filename="../../include/remote/future.ipp" />
+		<Unit filename="../../include/remote/future_error.hpp" />
+		<Unit filename="../../include/remote/fwd.hpp" />
+		<Unit filename="../../include/remote/global.hpp" />
+		<Unit filename="../../include/remote/idl.hpp" />
+		<Unit filename="../../include/remote/idl/class.hpp" />
+		<Unit filename="../../include/remote/idl/detail/proxy.ipp" />
+		<Unit filename="../../include/remote/idl/detail/proxy_impl.ipp" />
+		<Unit filename="../../include/remote/idl/detail/register_class.ipp" />
+		<Unit filename="../../include/remote/idl/detail/service.ipp" />
+		<Unit filename="../../include/remote/idl/detail/service_base.ipp" />
+		<Unit filename="../../include/remote/idl/detail/undefine.ipp" />
+		<Unit filename="../../include/remote/idl/register_class.hpp" />
+		<Unit filename="../../include/remote/io_runner.hpp" />
+		<Unit filename="../../include/remote/list.hpp" />
+		<Unit filename="../../include/remote/make_basic_binding.hpp" />
+		<Unit filename="../../include/remote/make_tcp_binding.hpp" />
+		<Unit filename="../../include/remote/map.hpp" />
+		<Unit filename="../../include/remote/pool_node.hpp" />
+		<Unit filename="../../include/remote/pool_node.ipp" />
+		<Unit filename="../../include/remote/register_archive.ipp" />
+		<Unit filename="../../include/remote/remote_error.hpp" />
+		<Unit filename="../../include/remote/serialization/system/asio_categories.hpp" />
+		<Unit filename="../../include/remote/serialization/system/error_categories.hpp" />
+		<Unit filename="../../include/remote/serialization/system/error_code.hpp" />
+		<Unit filename="../../include/remote/server.hpp" />
+		<Unit filename="../../include/remote/session.hpp" />
+		<Unit filename="../../include/remote/session.ipp" />
+		<Unit filename="../../include/remote/set.hpp" />
+		<Unit filename="../../include/remote/shared_future.hpp" />
+		<Unit filename="../../include/remote/shared_future.ipp" />
+		<Unit filename="../../include/remote/shared_ptr.hpp" />
+		<Unit filename="../../include/remote/system_error.hpp" />
+		<Unit filename="../../include/remote/target_error.hpp" />
+		<Unit filename="../../include/remote/transport_error.hpp" />
+		<Unit filename="../../include/remote/utility.hpp" />
+		<Unit filename="../../include/remote/vector.hpp" />
+		<Unit filename="../../src/remote/archive/binary_iarchive.cpp" />
+		<Unit filename="../../src/remote/archive/text_iarchive.cpp" />
+		<Unit filename="../../src/remote/archive/xml_iarchive.cpp" />
+		<Unit filename="../../src/remote/bindings/buffer_pool.cpp" />
+		<Unit filename="../../src/remote/bindings/named_pipe_acceptor.cpp" />
+		<Unit filename="../../src/remote/bindings/named_pipe_transport.cpp" />
+		<Unit filename="../../src/remote/bindings/tcp_acceptor.cpp" />
+		<Unit filename="../../src/remote/bindings/tcp_endpoint.cpp" />
+		<Unit filename="../../src/remote/bindings/tcp_transport.cpp" />
+		<Unit filename="../../src/remote/bindings/udp_acceptor.cpp" />
+		<Unit filename="../../src/remote/bindings/udp_endpoint.cpp" />
+		<Unit filename="../../src/remote/bindings/udp_transport.cpp" />
+		<Unit filename="../../src/remote/detail/call.cpp" />
+		<Unit filename="../../src/remote/detail/comm_link.cpp" />
+		<Unit filename="../../src/remote/detail/direct_link.cpp" />
+		<Unit filename="../../src/remote/detail/pool_link.cpp" />
+		<Unit filename="../../src/remote/detail/pool_node.cpp" />
+		<Unit filename="../../src/remote/detail/proxy.cpp" />
+		<Unit filename="../../src/remote/detail/proxy_pool.cpp" />
+		<Unit filename="../../src/remote/detail/result.cpp" />
+		<Unit filename="../../src/remote/detail/server.cpp" />
+		<Unit filename="../../src/remote/detail/service_pool.cpp" />
+		<Unit filename="../../src/remote/detail/type_id.cpp" />
+		<Unit filename="../../src/remote/exception.cpp" />
+		<Unit filename="../../src/remote/future_error.cpp" />
+		<Unit filename="../../src/remote/global.cpp" />
+		<Unit filename="../../src/remote/io_runner.cpp" />
+		<Unit filename="../../src/remote/pool_node.cpp" />
+		<Unit filename="../../src/remote/register_archive.cpp" />
+		<Unit filename="../../src/remote/serialization/system/error_categories.cpp" />
+		<Unit filename="../../src/remote/server.cpp" />
+		<Unit filename="../../src/remote/session.cpp" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
