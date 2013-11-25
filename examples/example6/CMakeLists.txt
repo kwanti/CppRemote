@@ -1,6 +1,6 @@
 
 cmake_minimum_required(VERSION 2.8.8)
-project(Example5 CXX)
+project(Example6 CXX)
 
 # options are None, Debug, Release, RelWithDebInfo, MinSizeRel
 set(CMAKE_BUILD_TYPE Release)
@@ -48,14 +48,14 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 set(Example_SOURCE_FILES_client
-	${Example_SRC_DIR}/remote_player.cpp
-	${Example_SRC_DIR}/remote_factory.cpp
+	${Example_SRC_DIR}/remote_reader.cpp
+	${Example_SRC_DIR}/remote_topic.cpp
 	${Example_SRC_DIR}/client.cpp
 )
 
 set(Example_SOURCE_FILES_server
-	${Example_SRC_DIR}/remote_player.cpp
-	${Example_SRC_DIR}/remote_factory.cpp
+	${Example_SRC_DIR}/remote_reader.cpp
+	${Example_SRC_DIR}/remote_topic.cpp
 	${Example_SRC_DIR}/server.cpp
 )
 
