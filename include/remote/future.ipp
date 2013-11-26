@@ -29,15 +29,18 @@ future<T>::future(impl_type const& impl)
 
 template<typename T>
 future<T>::future(BOOST_RV_REF(future) src)
-: m_impl(src.release())
-{}
+{
+	std::swap(m_impl, src.m_impl);
+	BOOST_ASSERT(!src.m_impl);
+}
 
 template<typename T>
 future<T>& future<T>::operator = (BOOST_RV_REF(future) src)
 {
 	if(this != &src)
 	{
-		m_impl = src.release();
+		std::swap(m_impl, src.m_impl);
+		src.m_impl.reset();
 	}
 	return *this;
 }
@@ -45,18 +48,8 @@ future<T>& future<T>::operator = (BOOST_RV_REF(future) src)
 template<typename T>
 shared_future<T> future<T>::share()
 {
-	return shared_future<T>(release());
+	return shared_future<T>(boost::move(*this));
 }
-
-
-template<typename T>
-typename future<T>::impl_type future<T>::release()
-{
-	impl_type impl = m_impl;
-	m_impl.reset();
-	return impl;
-}
-
 
 template<typename T>
 bool future<T>::valid() const
@@ -74,12 +67,12 @@ T future<T>::get()
 }
 
 template<typename T>
-bool future<T>::wait() const
+void future<T>::wait() const
 {
 	if(!valid())
 		throw future_error(future_errc::no_state);
 
-	return m_impl->wait();
+	m_impl->wait();
 }
 
 

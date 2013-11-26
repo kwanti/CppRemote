@@ -28,7 +28,7 @@ public:
 	shared_future();
 	shared_future(shared_future const& src);
 	shared_future(BOOST_RV_REF(shared_future) src);
-	explicit shared_future(BOOST_RV_REF(future<T>) src);
+	shared_future(BOOST_RV_REF(future<T>) src);
 	shared_future& operator = (BOOST_COPY_ASSIGN_REF(shared_future) src);
 	shared_future& operator = (BOOST_RV_REF(shared_future) src);
 	shared_future& operator = (BOOST_RV_REF(future<T>) src);

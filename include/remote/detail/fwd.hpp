@@ -44,7 +44,7 @@ typedef std::size_t link_id_t;
 
 struct one_way{};
 struct const_tag{};
-struct non_const_tag{};;
+struct non_const_tag{};
 
 class comm_request;
 

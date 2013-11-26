@@ -77,6 +77,6 @@ void load_construct_data(Archive& ar, remote::system_error* e, unsigned int cons
 }
 }
 
-BOOST_CLASS_TRACKING(remote::system_error, boost::serialization::track_never);
-BOOST_CLASS_EXPORT_KEY(remote::system_error);
+BOOST_CLASS_TRACKING(remote::system_error, boost::serialization::track_never)
+BOOST_CLASS_EXPORT_KEY(remote::system_error)
 #endif

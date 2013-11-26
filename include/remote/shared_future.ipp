@@ -30,13 +30,17 @@ shared_future<T>::shared_future(shared_future const& src)
 
 template<typename T>
 shared_future<T>::shared_future(BOOST_RV_REF(shared_future) src)
-: m_impl(boost::move(src.m_impl))
-{}
+{
+	std::swap(m_impl, src.m_impl);
+	BOOST_ASSERT(!src.m_impl);
+}
 
 template<typename T>
 shared_future<T>::shared_future(BOOST_RV_REF(future<T>) src)
-: m_impl(boost::move(src.release()))
-{}
+{
+	std::swap(m_impl, src.m_impl);
+	BOOST_ASSERT(!src.m_impl);
+}
 
 template<typename T>
 shared_future<T>& shared_future<T>::operator = (BOOST_COPY_ASSIGN_REF(shared_future) src)
@@ -53,7 +57,8 @@ shared_future<T>& shared_future<T>::operator = (BOOST_RV_REF(shared_future) src)
 {
 	if(this != &src)
 	{
-		m_impl = boost::move(src.m_impl);
+		std::swap(m_impl, src.m_impl);
+		src.m_impl.reset();
 	}
 	return *this;
 }
@@ -61,7 +66,8 @@ shared_future<T>& shared_future<T>::operator = (BOOST_RV_REF(shared_future) src)
 template<typename T>
 shared_future<T>& shared_future<T>::operator = (BOOST_RV_REF(future<T>) src)
 {
-	m_impl = boost::move(src.release());
+	std::swap(m_impl, src.m_impl);
+	src.m_impl.reset();
 	return *this;
 }
 

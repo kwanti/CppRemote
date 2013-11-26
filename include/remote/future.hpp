@@ -32,7 +32,7 @@ public:
 	bool valid() const;
 
 	T get();
-	bool wait() const;
+	void wait() const;
 
 	template<typename Rep, typename Period>
 	future_status wait_for(boost::chrono::duration<Rep, Period> const& duration) const;
@@ -42,9 +42,6 @@ public:
 
 private:
 	impl_type m_impl;
-
-private:
-	impl_type release();
 };
 
 }
