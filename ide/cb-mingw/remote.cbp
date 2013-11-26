@@ -57,7 +57,6 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++11" />
 			<Add option="-D_WIN32_WINNT=0x0501" />
 			<Add option="-DBOOST_THREAD_USE_LIB" />
 			<Add option="-DASIO_ENABLE_CANCELIO" />
