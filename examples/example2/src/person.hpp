@@ -25,7 +25,7 @@ public:
 	}
 
 	template<typename Archive>
-	void serialize(Archive& ar, unsigned int const ver)
+	void serialize(Archive& ar, unsigned int const)
 	{
 		ar & m_name & m_age;
 	}
