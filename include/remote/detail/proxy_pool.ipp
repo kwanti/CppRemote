@@ -93,6 +93,9 @@ boost::shared_ptr<Proxy> proxy_pool::get(shared_tag, std::string const& name, bo
 template<typename Proxy>
 boost::shared_ptr<Proxy> proxy_pool::get(shared_tag, object_id const& id)
 {
+	if(id == 0)
+		return boost::shared_ptr<Proxy>();
+
 	boost::lock_guard<boost::recursive_mutex> lock(m_proxies_mutex);
 
 	proxies::iterator iter = m_proxies.find(id);
@@ -128,7 +131,6 @@ boost::shared_ptr<Proxy> proxy_pool::get(shared_tag, object_vid const& id, bool 
 template<typename Proxy>
 void proxy_pool::release(Proxy* _proxy)	// nothrow
 {
-	BOOST_ASSERT(_proxy);
 	if(_proxy == 0)
 		return;
 

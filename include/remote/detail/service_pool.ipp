@@ -42,6 +42,9 @@ object_id service_pool::unique_id(Target const* t)
 	BOOST_STATIC_ASSERT(sizeof(id.m_object_id) >= sizeof(id.m_part));
 
 	void const* void_ptr = t;
+	if(void_ptr == 0)
+		return 0;
+
 	BOOST_ASSERT(reinterpret_cast<object_id>(void_ptr) <= canonical_bit_mask);
 
 	id.m_object_id = 0;
@@ -102,7 +105,6 @@ object_id service_pool::bind(Target* target, std::string const& name)
 template<typename Proxy, typename Target>
 object_id service_pool::bind(Target* target)
 {
-	BOOST_ASSERT(target);
 	boost::lock_guard<boost::recursive_mutex> lock(m_mutex);
 
 	object_id id = unique_id<Proxy>(target);

@@ -32,5 +32,4 @@ int main()
 
     session.release(audio_player);
     session.release(video_player);
-    session.release(null_player);
 }
