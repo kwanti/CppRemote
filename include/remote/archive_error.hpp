@@ -16,6 +16,7 @@
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/nvp.hpp>
 #include <boost/serialization/string.hpp>
+#include <boost/version.hpp>
 
 namespace remote
 {
@@ -49,6 +50,13 @@ private:
 	{
 		using namespace boost::serialization;
 		base_object<remote::exception>(*this);
+		ar & make_nvp("code", code);
+
+#if BOOST_VERSION < 105300
+		ar & make_nvp("what", m_msg);
+#else
+		ar & make_nvp("what", make_array(m_buffer, sizeof(m_buffer)));
+#endif
 	}
 };
 

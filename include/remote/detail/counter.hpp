@@ -11,7 +11,7 @@
 
 #include <boost/type_traits/is_integral.hpp>
 #include <boost/static_assert.hpp>
-#include <boost/thread/lock_guard.hpp>
+#include <boost/thread/locks.hpp>
 #include <boost/thread/mutex.hpp>
 
 
