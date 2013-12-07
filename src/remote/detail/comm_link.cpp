@@ -227,7 +227,7 @@ void comm_link::do_stop(exception_ptr _exception, handler _handler)
 void comm_link::send(call_ptr const& _call)
 {
 	BOOST_ASSERT(!m_io_service.stopped());
-	m_strand.dispatch(boost::bind(&comm_link::do_send, shared_from_this(), _call));
+	m_strand.post(boost::bind(&comm_link::do_send, shared_from_this(), _call));
 }
 
 void comm_link::do_send(call_ptr _call)

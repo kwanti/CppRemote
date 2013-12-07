@@ -49,8 +49,6 @@ private:
 	{
 		using namespace boost::serialization;
 		base_object<remote::exception>(*this);
-		ar & make_nvp("code", code);
-		ar & make_nvp("what", m_msg);
 	}
 };
 
