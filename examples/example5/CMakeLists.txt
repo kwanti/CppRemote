@@ -11,7 +11,7 @@ if(NOT Boost_FOUND)
 	set(Boost_USE_STATIC_LIBS ON)		# default is OFF, use boost static library
 #	set(Boost_USE_STATIC_RUNTIME ON)	# default is not set.
 
-	find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono REQUIRED)
+	find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono)
 	if(NOT Boost_FOUND)
 		set(BOOST_ROOT "C:/Program Files/boost/boost_1_50_0")		# if not set, it will let cmake to find it.
 		set(BOOST_LIBRARYDIR ${BOOST_ROOT}/stage/lib/x86)			# might need to set this too.
