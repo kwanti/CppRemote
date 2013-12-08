@@ -15,6 +15,7 @@
 #include <boost/serialization/export.hpp>
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/nvp.hpp>
+#include <boost/serialization/array.hpp>
 #include <boost/serialization/string.hpp>
 #include <boost/version.hpp>
 
