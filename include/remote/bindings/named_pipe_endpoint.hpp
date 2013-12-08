@@ -9,6 +9,9 @@
 #ifndef __REMOTE_BINDINGS_NAMED_PIPE_ENDPOINT_HPP__
 #define __REMOTE_BINDINGS_NAMED_PIPE_ENDPOINT_HPP__
 
+#include <boost/asio/windows/stream_handle.hpp>
+#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
+
 #include <string>
 
 
@@ -63,4 +66,5 @@ private:
 }
 }
 
+#endif
 #endif

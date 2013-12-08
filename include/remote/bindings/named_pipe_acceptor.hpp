@@ -11,9 +11,9 @@
 
 #include <remote/fwd.hpp>
 #include <remote/bindings/named_pipe_endpoint.hpp>
+#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
 
 #include <boost/asio/strand.hpp>
-#include <boost/asio/windows/stream_handle.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/function.hpp>
 
@@ -75,4 +75,5 @@ private:
 }
 }
 
+#endif
 #endif
