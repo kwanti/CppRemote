@@ -214,7 +214,7 @@ protected:
 
 protected:
 	friend class service;
-	friend basic_result_type;
+	friend class basic_result<R>;
 
 	template<typename Archive>
 	void serialize(Archive& ar, unsigned int const v)
@@ -243,7 +243,7 @@ public:
 
 private:
 	friend class service;
-	friend result_type;
+	friend class result_0<R>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -271,8 +271,8 @@ public:
 	{}
 
 private:
-	friend result_type;
 	friend class service;
+	friend class result_1<R, A1>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -309,8 +309,8 @@ public:
 	{}
 
 private:
-	friend result_type;
 	friend class service;
+	friend class result_2<R, A1, A2>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -352,8 +352,8 @@ public:
 	{}
 
 private:
-	friend result_type;
 	friend class service;
+	friend class result_3<R, A1, A2, A3>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -399,8 +399,8 @@ public:
 	{}
 
 private:
-	friend result_type;
 	friend class service;
+	friend class result_4<R, A1, A2, A3, A4>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -452,7 +452,7 @@ public:
 
 private:
 	friend class service;
-	friend result_type;
+	friend class result_5<R, A1, A2, A3, A4, A5>;
 	typedef basic_call<R> base_type;
 
 protected:
@@ -507,8 +507,8 @@ public:
 	{}
 
 private:
-	friend result_type;
 	friend class service;
+	friend class result_6<R, A1, A2, A3, A4, A5, A6>;
 	typedef basic_call<R> base_type;
 
 protected:

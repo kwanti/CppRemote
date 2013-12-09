@@ -68,7 +68,7 @@ private:
 	static const error_code more_data_available;
 	static const std::size_t mtu_size = 1500;					// assumed mtu size
 	static const std::size_t max_write_size = mtu_size - 300;	// assumed max write size
-	static const int default_connect_timeout = 3000;			// milliseconds
+	static const boost::chrono::milliseconds::rep default_connect_timeout = 3000;	// milliseconds
 
 	struct connect_operation;
 	typedef boost::shared_ptr<connect_operation> connect_operation_ptr;

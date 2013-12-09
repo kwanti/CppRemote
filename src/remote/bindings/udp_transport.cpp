@@ -138,7 +138,7 @@ udp_transport::udp_transport(io_service& ios)
 , m_strand(ios)
 , m_socket(ios)
 , m_timer(ios)
-, m_connect_timeout(default_connect_timeout)
+, m_connect_timeout(static_cast<boost::chrono::milliseconds::rep>(default_connect_timeout))
 , m_read_handler(0)
 {}
 
