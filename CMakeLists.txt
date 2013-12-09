@@ -11,12 +11,13 @@ if(NOT Boost_FOUND)
 	set(Boost_USE_STATIC_LIBS ON)		# default is OFF, use boost static library
 #	set(Boost_USE_STATIC_RUNTIME ON)	# default is not set.
 
-	if(NOT BOOST_ROOT)
+	find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono)
+	if(NOT Boost_FOUND)
 		set(BOOST_ROOT "C:/Program Files/boost/boost_1_50_0")		# if not set, it will let cmake to find it.
 		set(BOOST_LIBRARYDIR ${BOOST_ROOT}/stage/lib/x86)			# might need to set this too.
 		set(Boost_NO_SYSTEM_PATHS ON)								# default is OFF, set to ON if BOOST_ROOT is set
+		find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono REQUIRED)
 	endif()
-	find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono REQUIRED)
 endif()
 
 
@@ -44,8 +45,6 @@ set(CppRemote_SOURCE_FILES_remote_archive
 )
 set(CppRemote_SOURCE_FILES_remote_bindings	
 	${CppRemote_SRC_DIR}/remote/bindings/buffer_pool.cpp
-	${CppRemote_SRC_DIR}/remote/bindings/named_pipe_acceptor.cpp
-	${CppRemote_SRC_DIR}/remote/bindings/named_pipe_transport.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/tcp_acceptor.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/tcp_endpoint.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/tcp_transport.cpp
@@ -53,6 +52,13 @@ set(CppRemote_SOURCE_FILES_remote_bindings
 	${CppRemote_SRC_DIR}/remote/bindings/udp_endpoint.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/udp_transport.cpp
 )
+if(WIN32)
+	set(CppRemote_SOURCE_FILES_remote_bindings
+		${CppRemote_SOURCE_FILES_remote_bindings}
+		${CppRemote_SRC_DIR}/remote/bindings/named_pipe_acceptor.cpp
+		${CppRemote_SRC_DIR}/remote/bindings/named_pipe_transport.cpp
+	)
+endif()
 set(CppRemote_SOURCE_FILES_remote_detail
 	${CppRemote_SRC_DIR}/remote/detail/call.cpp
 	${CppRemote_SRC_DIR}/remote/detail/comm_link.cpp

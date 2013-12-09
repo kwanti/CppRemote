@@ -8,6 +8,8 @@
 //-----------------------------------------------------------------------------
 
 #include <remote/bindings/named_pipe_transport.hpp>
+#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
+
 #include <remote/bindings/buffer_pool.hpp>
 #include <remote/system_error.hpp>
 #include <remote/global.hpp>
@@ -444,3 +446,5 @@ bool named_pipe_transport::header::validate()
 
 }
 }
+
+#endif

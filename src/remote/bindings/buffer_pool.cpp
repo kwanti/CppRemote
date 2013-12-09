@@ -9,6 +9,7 @@
 #include <remote/bindings/buffer_pool.hpp>
 
 #include <boost/smart_ptr/make_shared.hpp>
+#include <boost/thread/locks.hpp>
 
 
 namespace remote

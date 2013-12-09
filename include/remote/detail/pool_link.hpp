@@ -66,7 +66,7 @@ protected:
 	io_service& m_io_service;
 
 private:
-	enum { default_timeout = 3000 };
+	static const boost::chrono::milliseconds::rep default_timeout = 3000;
 	typedef std::map<call_id, result_weak_ptr> weak_results;
 
 private:

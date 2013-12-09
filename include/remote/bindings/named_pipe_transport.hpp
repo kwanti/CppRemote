@@ -10,11 +10,12 @@
 #define __REMOTE_BINDINGS_NAMED_PIPE_TRANSPORT_HPP__
 
 #include <remote/bindings/fwd.hpp>
-#include <remote/bindings/buffer.hpp>
 #include <remote/bindings/named_pipe_endpoint.hpp>
-#include <remote/bindings/named_pipe_acceptor.hpp>
+#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
 
-#include <boost/asio/windows/stream_handle.hpp>
+#include <remote/bindings/named_pipe_acceptor.hpp>
+#include <remote/bindings/buffer.hpp>
+
 #include <boost/asio/strand.hpp>
 #include <boost/noncopyable.hpp>
 #include <boost/function.hpp>
@@ -123,4 +124,5 @@ private:
 }
 }
 
+#endif
 #endif

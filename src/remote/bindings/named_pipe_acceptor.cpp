@@ -7,6 +7,8 @@
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
 #include <remote/bindings/named_pipe_acceptor.hpp>
+#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
+
 #include <remote/system_error.hpp>
 
 #include <boost/thread/thread.hpp>
@@ -258,3 +260,5 @@ void named_pipe_acceptor::poll_io_service() const
 
 }
 }
+
+#endif

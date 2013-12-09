@@ -27,7 +27,7 @@ pool_link::pool_link(pool_node_ptr const& node, io_service& ios)
 : m_weak_node(node)
 , m_io_service(ios)
 , m_pool_id(boost::uuids::nil_uuid())
-, m_call_timeout(default_timeout)
+, m_call_timeout(static_cast<boost::chrono::milliseconds::rep>(default_timeout))
 {}
 
 pool_link::~pool_link()
