@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Server" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add library="..\bin\Debug\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DNDEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="..\bin\Release\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseMin">
+				<Option output="bin/ReleaseMin/Server" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/ReleaseMin/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DREMOTE_USER_REGISTER_ARCHIVE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="..\bin\ReleaseMin\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="../../../include" />
+		</Compiler>
+		<Unit filename="../../../examples/example1/src/audio_player.hpp" />
+		<Unit filename="../../../examples/example1/src/remote_player.cpp" />
+		<Unit filename="../../../examples/example1/src/remote_player.hpp" />
+		<Unit filename="../../../examples/example1/src/server.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
