@@ -18,6 +18,11 @@
 				</Compiler>
 				<Linker>
 					<Add library="..\bin\Debug\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -33,6 +38,11 @@
 				<Linker>
 					<Add option="-s" />
 					<Add library="..\bin\Release\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
 				</Linker>
 			</Target>
 			<Target title="ReleaseMin">
@@ -49,6 +59,11 @@
 				<Linker>
 					<Add option="-s" />
 					<Add library="..\bin\ReleaseMin\libremote.a" />
+					<Add library="boost_serialization" />
+					<Add library="boost_thread" />
+					<Add library="boost_system" />
+					<Add library="boost_chrono" />
+					<Add library="pthread" />
 				</Linker>
 			</Target>
 		</Build>
@@ -57,13 +72,6 @@
 			<Add option="-fexceptions" />
 			<Add directory="../../../include" />
 		</Compiler>
-		<Linker>
-			<Add library="boost_serialization" />
-			<Add library="boost_thread" />
-			<Add library="boost_system" />
-			<Add library="boost_chrono" />
-			<Add library="pthread" />
-		</Linker>
 		<Unit filename="../../../examples/example1/src/client.cpp" />
 		<Unit filename="../../../examples/example1/src/remote_player.cpp" />
 		<Unit filename="../../../examples/example1/src/remote_player.hpp" />
