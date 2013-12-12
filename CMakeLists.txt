@@ -51,14 +51,11 @@ set(CppRemote_SOURCE_FILES_remote_bindings
 	${CppRemote_SRC_DIR}/remote/bindings/udp_acceptor.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/udp_endpoint.cpp
 	${CppRemote_SRC_DIR}/remote/bindings/udp_transport.cpp
+	${CppRemote_SRC_DIR}/remote/bindings/local_acceptor.cpp
+	${CppRemote_SRC_DIR}/remote/bindings/local_transport.cpp
+	${CppRemote_SRC_DIR}/remote/bindings/named_pipe_acceptor.cpp
+	${CppRemote_SRC_DIR}/remote/bindings/named_pipe_transport.cpp
 )
-if(WIN32)
-	set(CppRemote_SOURCE_FILES_remote_bindings
-		${CppRemote_SOURCE_FILES_remote_bindings}
-		${CppRemote_SRC_DIR}/remote/bindings/named_pipe_acceptor.cpp
-		${CppRemote_SRC_DIR}/remote/bindings/named_pipe_transport.cpp
-	)
-endif()
 set(CppRemote_SOURCE_FILES_remote_detail
 	${CppRemote_SRC_DIR}/remote/detail/call.cpp
 	${CppRemote_SRC_DIR}/remote/detail/comm_link.cpp
