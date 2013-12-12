@@ -10,7 +10,7 @@
 #include <remote/global.hpp>
 #include <remote/make_basic_binding.hpp>
 #include <remote/bindings/binary_serializer.hpp>
-#include <remote/bindings/udp_transport.hpp>
+#include <remote/bindings/icp_transport.hpp>
 
 #ifdef REMOTE_USER_REGISTER_ARCHIVE
 #include <remote/register_archive.ipp>
@@ -45,8 +45,8 @@ int main()
 
 	// construct binding
 	typedef remote::bindings::binary_serializer serializer;
-	typedef remote::bindings::udp_transport transport;
-	remote::binding binding = remote::make_basic_binding<serializer, transport>("localhost", 8888);
+	typedef remote::bindings::ipc_transport transport;
+	remote::binding binding = remote::make_basic_binding<serializer, transport>("localhost");
 
 	// set event handler and start the session
 	session.set_error_handler(on_error);

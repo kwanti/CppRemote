@@ -6,13 +6,11 @@
 //
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
-#ifndef __REMOTE_BINDINGS_NAMED_PIPE_ENDPOINT_HPP__
-#define __REMOTE_BINDINGS_NAMED_PIPE_ENDPOINT_HPP__
+#ifndef __REMOTE_BINDINGS_LOCAL_ENDPOINT_HPP__
+#define __REMOTE_BINDINGS_LOCAL_ENDPOINT_HPP__
 
-#include <boost/asio/windows/stream_handle.hpp>
-#ifdef BOOST_ASIO_HAS_WINDOWS_STREAM_HANDLE
-
-#include <string>
+#include <boost/asio/local/stream_protocol.hpp>
+#ifdef BOOST_ASIO_HAS_LOCAL_SOCKETS
 
 
 namespace remote
@@ -20,32 +18,33 @@ namespace remote
 namespace bindings
 {
 
-class named_pipe_endpoint
+class local_endpoint
 {
 public:
 	static unsigned int const unlimited_connections = 255;
 	static unsigned int const default_buffer_size = 512;
 
 public:
-	named_pipe_endpoint()
+	local_endpoint()
 	: m_max_connections(unlimited_connections)
 	, m_in_buffer_size(default_buffer_size)
 	, m_out_buffer_size(default_buffer_size)
 	{}
 
-	explicit named_pipe_endpoint(std::string const& name)
+	explicit local_endpoint(std::string const& name)
 	: m_max_connections(unlimited_connections)
 	, m_in_buffer_size(default_buffer_size)
 	, m_out_buffer_size(default_buffer_size)
-	, m_path((!name.empty() && name[0] == '\\')? name: "\\\\.\\pipe\\" + name)
+	, m_path((!name.empty() && name.find_first_of("./~") == 0)? name: "/tmp/" + name)
 	{}
 
-	bool operator == (named_pipe_endpoint const& rhs) const
+	bool operator == (local_endpoint const& rhs) const
 	{
 		return m_path == rhs.m_path;
 	}
 
 	char const* path() const { return m_path.c_str(); }
+
 	unsigned int max_connections() const { return m_max_connections; }
 	void set_max_connections(unsigned int value) { m_max_connections = value; }
 

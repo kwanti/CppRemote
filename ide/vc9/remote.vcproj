@@ -594,6 +594,22 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\include\remote\bindings\ipc_transport.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\include\remote\bindings\local_acceptor.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\include\remote\bindings\local_endpoint.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\include\remote\bindings\local_transport.hpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\include\remote\bindings\named_pipe_acceptor.hpp"
 						>
 					</File>
@@ -1483,6 +1499,110 @@
 					>
 					<File
 						RelativePath="..\..\src\remote\bindings\buffer_pool.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Debug|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseMin|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseMin|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\src\remote\bindings\local_acceptor.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Debug|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseMin|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="ReleaseMin|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								ObjectFile="$(IntDir)\remote\bindings\"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath="..\..\src\remote\bindings\local_transport.cpp"
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
