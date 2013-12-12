@@ -18,15 +18,6 @@ namespace remote
 {
 namespace bindings
 {
-namespace // helper
-{
-
-exception_ptr make_system_error(boost::system::error_code const& ec)
-{
-	return boost::make_shared<system_error>(ec);
-}
-
-}
 
 tcp_acceptor::tcp_acceptor(io_service& ios)
 : m_io_service(ios)
@@ -34,7 +25,7 @@ tcp_acceptor::tcp_acceptor(io_service& ios)
 , m_acceptor(ios)
 {}
 
-void tcp_acceptor::listen(tcp_endpoint const& ep, handler const& hdl)
+void tcp_acceptor::listen(endpoint_type const& ep, handler const& hdl)
 {
 	BOOST_ASSERT(hdl);
 	ep.resolve(m_io_service,

@@ -27,10 +27,11 @@ class tcp_acceptor : public boost::noncopyable
 {
 public:
 	typedef boost::function<void(exception_ptr)> handler;
+	typedef tcp_endpoint endpoint_type;
 
 public:
 	explicit tcp_acceptor(io_service& ios);
-	void listen(tcp_endpoint const& ep, handler const& hdl);
+	void listen(endpoint_type const& ep, handler const& hdl);
 	void close();
 	bool is_listening() const;
 
@@ -55,7 +56,7 @@ private:
 	void do_close();
 
 	void accept(asio_tcp::socket& socket, accept_handler const& hdl);
-	void do_accept(asio_tcp::socket& socket, accept_handler _handler);
+	void do_accept(asio_tcp::socket& socket, accept_handler hdl);
 
 };
 
