@@ -11,7 +11,7 @@
 #include <remote/remote_error.hpp>
 #include <remote/make_basic_binding.hpp>
 #include <remote/bindings/binary_serializer.hpp>
-#include <remote/bindings/udp_transport.hpp>
+#include <remote/bindings/ipc_transport.hpp>
 
 #include <iostream>
 
@@ -83,8 +83,8 @@ int main()
 
 	// construct binding
 	typedef remote::bindings::binary_serializer serializer;
-	typedef remote::bindings::udp_transport transport;
-	remote::binding binding = remote::make_basic_binding<serializer, transport>("localhost", 8888);
+	typedef remote::bindings::ipc_transport transport;
+	remote::binding binding = remote::make_basic_binding<serializer, transport>("localhost");
 
 	// setting event handlers and start the server
 	server.set_accept_handler(on_accept);
