@@ -86,6 +86,7 @@
 		<Unit filename="../../include/remote/bindings/buffer_pool.hpp" />
 		<Unit filename="../../include/remote/bindings/channel.hpp" />
 		<Unit filename="../../include/remote/bindings/fwd.hpp" />
+		<Unit filename="../../include/remote/bindings/ipc_transport.hpp" />
 		<Unit filename="../../include/remote/bindings/local_acceptor.hpp" />
 		<Unit filename="../../include/remote/bindings/local_endpoint.hpp" />
 		<Unit filename="../../include/remote/bindings/local_transport.hpp" />

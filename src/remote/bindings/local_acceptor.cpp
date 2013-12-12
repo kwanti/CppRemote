@@ -15,6 +15,8 @@
 #include <boost/bind.hpp>
 #include <boost/ref.hpp>
 
+#include <cstdio>
+
 
 namespace remote
 {
@@ -36,9 +38,11 @@ void local_acceptor::do_listen(endpoint_type aep, handler hdl)
 {
 	try
 	{
+		// remove socket file created by previous session
+		std::remove(aep.path());
+
 		asio_local::endpoint ep(aep.path());
 		m_acceptor.open(ep.protocol());
-		m_acceptor.set_option(asio_local::acceptor::reuse_address(true));
 		m_acceptor.set_option(asio_local::acceptor::receive_buffer_size(aep.in_buffer_size()));
 		m_acceptor.set_option(asio_local::acceptor::send_buffer_size(aep.out_buffer_size()));
 		m_acceptor.bind(ep);
