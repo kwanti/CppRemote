@@ -35,7 +35,7 @@ public:
 	: m_max_connections(unlimited_connections)
 	, m_in_buffer_size(default_buffer_size)
 	, m_out_buffer_size(default_buffer_size)
-	, m_path((!name.empty() && name.find_first_of("./") == 0)? name: "/tmp/remote/" + name)
+	, m_path((!name.empty() && name.find_first_of("./~") == 0)? name: "/tmp/" + name)
 	{}
 
 	bool operator == (local_endpoint const& rhs) const

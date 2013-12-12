@@ -169,12 +169,12 @@ void local_transport::do_connect(endpoint_type aep, handler hdl)
 		m_socket.set_option(asio_local::acceptor::send_buffer_size(aep.out_buffer_size()));
 		m_socket.async_connect(ep, m_strand.wrap(boost::bind(&this_type::on_connect, this, _1, hdl)));
 	}
-	catch(error_code& ec)
+	catch(boost::system::system_error& error)
 	{
 		if(m_socket.is_open())
 			m_socket.close();
 
-		m_io_service.post(boost::bind(hdl, make_system_error(ec)));
+		m_io_service.post(boost::bind(hdl, make_system_error(error.code())));
 	}
 }
 

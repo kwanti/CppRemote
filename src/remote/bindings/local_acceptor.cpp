@@ -38,6 +38,7 @@ void local_acceptor::do_listen(endpoint_type aep, handler hdl)
 	{
 		asio_local::endpoint ep(aep.path());
 		m_acceptor.open(ep.protocol());
+		m_acceptor.set_option(asio_local::acceptor::reuse_address(true));
 		m_acceptor.set_option(asio_local::acceptor::receive_buffer_size(aep.in_buffer_size()));
 		m_acceptor.set_option(asio_local::acceptor::send_buffer_size(aep.out_buffer_size()));
 		m_acceptor.bind(ep);
@@ -45,12 +46,12 @@ void local_acceptor::do_listen(endpoint_type aep, handler hdl)
 
 		m_io_service.post(boost::bind(hdl, exception_ptr()));
 	}
-	catch(error_code& ec)
+	catch(boost::system::system_error& error)
 	{
 		if(m_acceptor.is_open())
 			m_acceptor.close();
 
-		m_io_service.post(boost::bind(hdl, make_system_error(ec)));
+		m_io_service.post(boost::bind(hdl, make_system_error(error.code())));
 	}
 }
 
