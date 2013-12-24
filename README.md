@@ -140,10 +140,6 @@ Links
 
 Releases
 ---
-v0.1
-
-* Initial public release
-
 v0.2
 
 * Fix linux GCC build issues.
@@ -153,6 +149,6 @@ v0.2
 * Add local_transport to support unix domain socket.
 * Add ipc_transport to select named_pipe_transport when compile in window and local_transport when compile in linux.
 
-License
----
-Distributed under GPL v2 license.
+v0.1
+
+* Initial public release
