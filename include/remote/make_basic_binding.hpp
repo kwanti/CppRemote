@@ -27,10 +27,28 @@ binding make_basic_binding(A1 a1)
 	return binding(boost::make_shared<binding_type>(endpoint_type(a1)));
 }
 
+template<typename Serializer, typename Transport, typename Filter, typename A1>
+binding make_basic_binding(A1 a1)
+{
+	typedef bindings::basic_binding<Serializer, Transport, Filter> binding_type;
+	typedef typename Transport::endpoint_type endpoint_type;
+
+	return binding(boost::make_shared<binding_type>(endpoint_type(a1)));
+}
+
 template<typename Serializer, typename Transport, typename A1, typename A2>
 binding make_basic_binding(A1 a1, A2 a2)
 {
 	typedef bindings::basic_binding<Serializer, Transport> binding_type;
+	typedef typename Transport::endpoint_type endpoint_type;
+
+	return binding(boost::make_shared<binding_type>(endpoint_type(a1, a2)));
+}
+
+template<typename Serializer, typename Transport, typename Filter, typename A1, typename A2>
+binding make_basic_binding(A1 a1, A2 a2)
+{
+	typedef bindings::basic_binding<Serializer, Transport, Filter> binding_type;
 	typedef typename Transport::endpoint_type endpoint_type;
 
 	return binding(boost::make_shared<binding_type>(endpoint_type(a1, a2)));

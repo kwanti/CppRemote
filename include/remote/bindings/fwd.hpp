@@ -10,7 +10,16 @@
 #define __REMOTE_BINDINGS_FWD_HPP__
 
 #include <boost/smart_ptr/shared_ptr.hpp>
+#include <boost/asio/basic_streambuf_fwd.hpp>
 
+
+namespace boost
+{
+namespace asio
+{
+class io_service;
+}
+}
 
 namespace remote
 {
@@ -26,20 +35,14 @@ class binding;
 class acceptor;
 class channel;
 typedef detail::call call;
+typedef boost::asio::basic_streambuf<> buffer;
 
 typedef boost::shared_ptr<binding> binding_ptr;
 typedef boost::shared_ptr<acceptor> acceptor_ptr;
 typedef boost::shared_ptr<channel> channel_ptr;
 typedef boost::shared_ptr<call> call_ptr;
+typedef boost::shared_ptr<buffer> buffer_ptr;
 
-}
-}
-
-namespace boost
-{
-namespace asio
-{
-class io_service;
 }
 }
 

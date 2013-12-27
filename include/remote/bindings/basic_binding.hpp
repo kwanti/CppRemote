@@ -12,6 +12,7 @@
 #include <remote/bindings/binding.hpp>
 #include <remote/bindings/basic_acceptor.hpp>
 #include <remote/bindings/basic_channel.hpp>
+#include <remote/bindings/no_filter.hpp>
 
 #include <boost/ref.hpp>
 #include <boost/bind/bind.hpp>
@@ -22,12 +23,12 @@ namespace remote
 namespace bindings
 {
 
-template<typename Serializer, typename Transport>
+template<typename Serializer, typename Transport, typename Filter = no_filter>
 class basic_binding : public binding
 {
 public:
-	typedef basic_channel<Serializer, Transport> channel_type;
-	typedef basic_acceptor<Serializer, Transport> acceptor_type;
+	typedef basic_channel<Serializer, Transport, Filter> channel_type;
+	typedef basic_acceptor<Serializer, Transport, Filter> acceptor_type;
 	typedef typename Transport::endpoint_type endpoint_type;
 
 public:
