@@ -622,6 +622,10 @@
 						>
 					</File>
 					<File
+						RelativePath="..\..\include\remote\bindings\no_filter.hpp"
+						>
+					</File>
+					<File
 						RelativePath="..\..\include\remote\bindings\tcp_acceptor.hpp"
 						>
 					</File>
