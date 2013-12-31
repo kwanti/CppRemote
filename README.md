@@ -22,6 +22,7 @@ Features
 * Exception is transport back to caller.
 * Binary, Text and XML serializer.
 * TCP, UDP, windows named pipe and linux domain socket transport.
+* Support compression.
 * IDL using C++ macro.
 * Write in standard C++ code. No need external compiler.
 
@@ -119,6 +120,7 @@ You can get the build instructions [here](http://www.cppremote.com/build.html).
 Dependency
 ---
 * [Boost](http://www.boost.org/) (>= 1.50)
+* [zlib](http://www.zlib.net/) (optional)
 
 Tested Compiler
 ---
@@ -140,6 +142,12 @@ Links
 
 Releases
 ---
+
+v0.3
+
+* Add filter element in bindings.
+* Add zlib_filter to support compression.
+
 v0.2
 
 * Fix linux GCC build issues.
