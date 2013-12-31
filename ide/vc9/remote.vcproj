@@ -447,6 +447,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\include\remote\filter_error.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\include\remote\future.hpp"
 					>
 				</File>

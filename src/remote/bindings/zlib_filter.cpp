@@ -1,7 +1,7 @@
 // Copyright 2013 Ng Kwan Ti <ngkwanti -at- gmail.com>
 //
-// This file is distributed under GPL v2 license. You can redistribute it and/or
-// modify it under the terms of the GNU General Public License version 2 as
+// This file is distributed under LGPL v2.1 license. You can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public License version 2.1 as
 // published by the Free Software Foundation. See <http://www.gnu.org/licenses/>.
 //
 // See www.cppremote.com for documentation.
@@ -9,6 +9,7 @@
 
 #include <remote/bindings/zlib_filter.hpp>
 #include <remote/bindings/buffer.hpp>
+#include <remote/filter_error.hpp>
 #include <zlib.h>
 
 
@@ -33,7 +34,7 @@ buffer_ptr zlib_filter::output(buffer_ptr const& buf)
 	int ret = compress(out_data, &out_len, in_data, in_len);
 	if(ret != Z_OK)
 	{
-		// throw here
+		throw filter_error("fail in zlib compress");
 	}
 
 	buf->consume(in_len);
@@ -56,7 +57,7 @@ buffer_ptr zlib_filter::input(buffer_ptr const& buf)
 	int ret = inflateInit(&strm);
 	if(ret != Z_OK)
 	{
-	// throw here
+		throw filter_error("fail inflateInit");
 	}
 
 	strm.avail_in = buf->size();
@@ -73,14 +74,14 @@ buffer_ptr zlib_filter::input(buffer_ptr const& buf)
 
 		buf->consume(buf_size - strm.avail_in);
 		buf->commit(chunk - strm.avail_out);
-		}
-		while(strm.avail_in);
+	}
+	while(strm.avail_in);
 
 	if(ret < 0)
 	{
 		std::string msg = strm.msg;
 		inflateEnd(&strm);
-		// throw here
+		throw filter_error(msg);
 	}
 	inflateEnd(&strm);
 

@@ -141,6 +141,7 @@
 		<Unit filename="../../include/remote/detail/type_traits.hpp" />
 		<Unit filename="../../include/remote/detail/utility.hpp" />
 		<Unit filename="../../include/remote/exception.hpp" />
+		<Unit filename="../../include/remote/filter_error.hpp" />
 		<Unit filename="../../include/remote/future.hpp" />
 		<Unit filename="../../include/remote/future.ipp" />
 		<Unit filename="../../include/remote/future_error.hpp" />

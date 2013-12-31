@@ -93,6 +93,7 @@
 		<Unit filename="../../include/remote/bindings/named_pipe_acceptor.hpp" />
 		<Unit filename="../../include/remote/bindings/named_pipe_endpoint.hpp" />
 		<Unit filename="../../include/remote/bindings/named_pipe_transport.hpp" />
+		<Unit filename="../../include/remote/bindings/no_filter.hpp" />
 		<Unit filename="../../include/remote/bindings/tcp_acceptor.hpp" />
 		<Unit filename="../../include/remote/bindings/tcp_endpoint.hpp" />
 		<Unit filename="../../include/remote/bindings/tcp_transport.hpp" />
@@ -137,6 +138,7 @@
 		<Unit filename="../../include/remote/detail/type_traits.hpp" />
 		<Unit filename="../../include/remote/detail/utility.hpp" />
 		<Unit filename="../../include/remote/exception.hpp" />
+		<Unit filename="../../include/remote/filter_error.hpp" />
 		<Unit filename="../../include/remote/future.hpp" />
 		<Unit filename="../../include/remote/future.ipp" />
 		<Unit filename="../../include/remote/future_error.hpp" />
