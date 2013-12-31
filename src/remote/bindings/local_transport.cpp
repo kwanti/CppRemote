@@ -82,7 +82,7 @@ local_transport::local_transport(io_service& ios)
 
 local_transport::~local_transport()
 {
-	BOOST_ASSERT((m_state == stopped) || m_io_serivce.stopped());
+	BOOST_ASSERT((m_state == stopped) || m_io_service.stopped());
 }
 
 void local_transport::accept(acceptor_type& ac, handler const& hdl)
