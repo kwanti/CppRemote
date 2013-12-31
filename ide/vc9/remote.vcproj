@@ -447,6 +447,10 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\include\remote\filter_error.hpp"
+					>
+				</File>
+				<File
 					RelativePath="..\..\include\remote\future.hpp"
 					>
 				</File>
@@ -619,6 +623,10 @@
 					</File>
 					<File
 						RelativePath="..\..\include\remote\bindings\named_pipe_transport.hpp"
+						>
+					</File>
+					<File
+						RelativePath="..\..\include\remote\bindings\no_filter.hpp"
 						>
 					</File>
 					<File
@@ -1554,6 +1562,7 @@
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1562,6 +1571,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Debug|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1570,6 +1580,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1578,6 +1589,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1586,6 +1598,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="ReleaseMin|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1594,6 +1607,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="ReleaseMin|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1606,6 +1620,7 @@
 						>
 						<FileConfiguration
 							Name="Debug|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1614,6 +1629,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Debug|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1622,6 +1638,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1630,6 +1647,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="Release|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1638,6 +1656,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="ReleaseMin|Win32"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"
@@ -1646,6 +1665,7 @@
 						</FileConfiguration>
 						<FileConfiguration
 							Name="ReleaseMin|x64"
+							ExcludedFromBuild="true"
 							>
 							<Tool
 								Name="VCCLCompilerTool"

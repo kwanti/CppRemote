@@ -6,18 +6,25 @@
 //
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
-#ifndef REMOTE_IDL__
-#define REMOTE_IDL__
+#ifndef __REMOTE_BINDINGS_ZLIB_FILTER_HPP__
+#define __REMOTE_BINDINGS_ZLIB_FILTER_HPP__
 
-#include <remote/detail/service.hpp>
-#include <remote/future.hpp>
+#include <remote/bindings/fwd.hpp>
 
-#include <remote/detail/proxy_pool.hpp>
-#include <remote/detail/service_pool.hpp>
 
-#include <remote/detail/proxy_pool.ipp>
-#include <remote/detail/service_pool.ipp>
+namespace remote
+{
+namespace bindings
+{
 
-#include <boost/serialization/export.hpp>
+class zlib_filter
+{
+public:
+	buffer_ptr output(buffer_ptr const& buf);
+	buffer_ptr input(buffer_ptr const& buf);
+};
+
+}
+}
 
 #endif

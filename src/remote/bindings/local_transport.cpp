@@ -1,7 +1,7 @@
 // Copyright 2013 Ng Kwan Ti <ngkwanti -at- gmail.com>
 //
-// This file is distributed under GPL v2 license. You can redistribute it and/or
-// modify it under the terms of the GNU General Public License version 2 as
+// This file is distributed under LGPL v2.1 license. You can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public License version 2.1 as
 // published by the Free Software Foundation. See <http://www.gnu.org/licenses/>.
 //
 // See www.cppremote.com for documentation.
@@ -82,7 +82,7 @@ local_transport::local_transport(io_service& ios)
 
 local_transport::~local_transport()
 {
-	BOOST_ASSERT((m_state == stopped) || m_io_serivce.stopped());
+	BOOST_ASSERT((m_state == stopped) || m_io_service.stopped());
 }
 
 void local_transport::accept(acceptor_type& ac, handler const& hdl)

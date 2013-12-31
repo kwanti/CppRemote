@@ -1,3 +1,6 @@
+Version 0.3
+- Add filter element in bindings.
+- Add zlib_filter to support compression.
 
 Version 0.2
 - Fix linux GCC build issues.
