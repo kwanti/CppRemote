@@ -22,13 +22,13 @@ namespace remote
 namespace bindings
 {
 
-template<typename Serializer, typename Transport>
+template<typename Serializer, typename Transport, typename Filter>
 class basic_acceptor : public acceptor
 {
 public:
 	typedef typename Transport::endpoint_type endpoint_type;
 	typedef typename Transport::acceptor_type acceptor_type;
-	typedef basic_channel<Serializer, Transport> channel_type;
+	typedef basic_channel<Serializer, Transport, Filter> channel_type;
 
 public:
 	explicit basic_acceptor(io_service& ios)

@@ -11,8 +11,10 @@
 #include <remote/remote_error.hpp>
 #include <remote/system_error.hpp>
 #include <remote/target_error.hpp>
+#include <remote/filter_error.hpp>
 #include <remote/serialization/system/asio_categories.hpp>
 
+BOOST_CLASS_EXPORT_IMPLEMENT(remote::filter_error)
 BOOST_CLASS_EXPORT_IMPLEMENT(remote::archive_error)
 BOOST_CLASS_EXPORT_IMPLEMENT(remote::remote_error)
 BOOST_CLASS_EXPORT_IMPLEMENT(remote::system_error)

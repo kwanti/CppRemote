@@ -6,19 +6,30 @@
 //
 // See www.cppremote.com for documentation.
 //-----------------------------------------------------------------------------
-#ifndef __REMOTE_BINDINGS_BUFFER_HPP__
-#define __REMOTE_BINDINGS_BUFFER_HPP__
+#ifndef __REMOTE_BINDINGS_NO_FILTER_HPP__
+#define __REMOTE_BINDINGS_NO_FILTER_HPP__
 
-#include <boost/asio/streambuf.hpp>
-#include <boost/smart_ptr/shared_ptr.hpp>
+#include <remote/bindings/fwd.hpp>
+
 
 namespace remote
 {
 namespace bindings
 {
 
-typedef boost::asio::basic_streambuf<> buffer;
-typedef boost::shared_ptr<buffer> buffer_ptr;
+class no_filter
+{
+public:
+	buffer_ptr output(buffer_ptr const& buffer)
+	{
+		return buffer;
+	}
+
+	buffer_ptr input(buffer_ptr const& buffer)
+	{
+		return buffer;
+	}
+};
 
 }
 }

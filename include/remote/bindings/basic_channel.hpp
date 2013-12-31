@@ -21,7 +21,7 @@ namespace remote
 namespace bindings
 {
 
-template<typename Serializer, typename Transport>
+template<typename Serializer, typename Transport, typename Filter>
 class basic_channel
 : public channel
 {
@@ -62,7 +62,9 @@ public:
 
 		try
 		{
-			m_transport.write(m_serializer.serialize(_call), _handler);
+			Filter filter;
+			Serializer serializer;
+			m_transport.write(filter.output(serializer.serialize(_call)), _handler);
 		}
 		catch(archive_error& e)
 		{
@@ -80,10 +82,9 @@ public:
 	}
 
 private:
-	typedef basic_channel<Serializer, Transport> this_type;
+	typedef basic_channel<Serializer, Transport, Filter> this_type;
 
 private:
-	Serializer m_serializer;
 	Transport m_transport;
 	call_handler m_call_handler;
 
@@ -100,7 +101,9 @@ private:
 
 		try
 		{
-			m_call_handler(exception_ptr(), m_serializer.deserialize(_buffer));
+			Filter filter;
+			Serializer serializer;
+			m_call_handler(exception_ptr(), serializer.deserialize(filter.input(_buffer)));
 		}
 		catch(archive_error& e)
 		{
