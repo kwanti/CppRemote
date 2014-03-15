@@ -23,7 +23,7 @@ exception_ptr current_exception()
 	}
 	catch(exception& e)
 	{
-		return make_exception_ptr(e);
+		return remote::make_exception_ptr(e);
 	}
 	catch(std::exception& e)
 	{

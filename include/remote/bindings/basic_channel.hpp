@@ -68,7 +68,7 @@ public:
 		}
 		catch(archive_error& e)
 		{
-			_handler(make_exception_ptr(e));
+			_handler(remote::make_exception_ptr(e));
 		}
 	}
 
@@ -107,7 +107,7 @@ private:
 		}
 		catch(archive_error& e)
 		{
-			m_call_handler(make_exception_ptr(e), call_ptr());
+			m_call_handler(remote::make_exception_ptr(e), call_ptr());
 		}
 	}
 };
