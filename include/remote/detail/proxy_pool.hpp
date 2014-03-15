@@ -61,6 +61,9 @@ public:
 	template<typename Proxy>
 	void release(Proxy* _proxy);
 
+	template<typename Proxy>
+	void release(boost::shared_ptr<Proxy> const& _proxy);
+
 	proxy_ptr find(std::string const& name) const;
 	proxy_ptr find(object_id const& id) const;
 	proxy_ptr find(object_vid const& id) const;

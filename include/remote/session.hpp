@@ -76,6 +76,17 @@ public:
 	template<typename Proxy>
 	void release(Proxy* _proxy);
 
+	template<typename Proxy>
+	void release(boost::shared_ptr<Proxy> const& _proxy);
+
+#define REMOTE_CC BOOST_PP_EMPTY()
+#include <remote/session_invoke_declare.ipp>
+#undef REMOTE_CC
+
+#define REMOTE_CC const
+#include <remote/session_invoke_declare.ipp>
+#undef REMOTE_CC
+
 private:
 	struct no_init {};
 	friend class remote::detail::server;
