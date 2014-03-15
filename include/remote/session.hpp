@@ -76,6 +76,9 @@ public:
 	template<typename Proxy>
 	void release(Proxy* _proxy);
 
+	template<typename Proxy>
+	void release(boost::shared_ptr<Proxy> const& _proxy);
+
 private:
 	struct no_init {};
 	friend class remote::detail::server;

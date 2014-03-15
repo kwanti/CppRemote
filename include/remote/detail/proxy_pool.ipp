@@ -24,13 +24,13 @@ namespace detail
 template<typename Proxy>
 Proxy* proxy_pool::get(raw_tag, std::string const& name, bool cache)
 {
+	boost::lock_guard<boost::recursive_mutex> lock(m_unmanaged_proxies_mutex);
 	boost::shared_ptr<Proxy> _proxy = get<Proxy>(shared_tag(), name, cache);
 	if(!_proxy)
 		return 0;
 
 	BOOST_ASSERT(_proxy->id().which() == 0);	// must be object_id type
 
-	boost::lock_guard<boost::recursive_mutex> lock(m_unmanaged_proxies_mutex);
 	m_unmanaged_proxies[boost::get<object_id>(_proxy->id())] = _proxy;
 	return _proxy.get();
 }
@@ -38,14 +38,12 @@ Proxy* proxy_pool::get(raw_tag, std::string const& name, bool cache)
 template<typename Proxy>
 Proxy* proxy_pool::get(raw_tag, object_id const& id)
 {
+	boost::lock_guard<boost::recursive_mutex> lock(m_unmanaged_proxies_mutex);
 	boost::shared_ptr<Proxy> _proxy = get<Proxy>(shared_tag(), id);
 	if(!_proxy)
 		return 0;
 
-	{
-		boost::lock_guard<boost::recursive_mutex> lock(m_unmanaged_proxies_mutex);
-		m_unmanaged_proxies[id] = _proxy;
-	}
+	m_unmanaged_proxies[id] = _proxy;
 	return _proxy.get();
 }
 
@@ -145,6 +143,34 @@ void proxy_pool::release(Proxy* _proxy)	// nothrow
 		return;
 
 	m_unmanaged_proxies.erase(iter);
+}
+
+template<typename Proxy>
+void proxy_pool::release(boost::shared_ptr<Proxy> const& _proxy)	// nothrow
+{
+	if(!_proxy)
+		return;
+
+	BOOST_ASSERT(_proxy->id().which() == 0);	// must be object_id type
+	object_id id = boost::get<object_id>(_proxy->id());
+
+	boost::lock_guard<boost::recursive_mutex> lock(m_unmanaged_proxies_mutex);
+	proxies::iterator iter = m_unmanaged_proxies.find(id);
+	if(iter != m_unmanaged_proxies.end())
+	{
+		// won't release this shared pointer if user still using the raw pointer of this proxy
+		return;
+	}
+
+	boost::lock_guard<boost::recursive_mutex> proxies_lock(m_proxies_mutex);
+	proxies::iterator proxy_iter = m_proxies.find(id);
+	if(proxy_iter == m_proxies.end())
+		return;
+
+	if(_proxy != proxy_iter->second)
+		return;
+
+	m_proxies.erase(proxy_iter);
 }
 
 }

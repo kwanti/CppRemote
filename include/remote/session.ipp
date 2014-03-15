@@ -34,6 +34,12 @@ void session::release(Proxy* _proxy)
 	m_link->get_proxy_pool().release(_proxy);
 }
 
+template<typename Proxy>
+void session::release(boost::shared_ptr<Proxy> const& _proxy)
+{
+	m_link->get_proxy_pool().release(_proxy);
+}
+
 }
 
 #endif
