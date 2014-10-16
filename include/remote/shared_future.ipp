@@ -80,7 +80,7 @@ void shared_future<T>::swap(shared_future& other)
 template<typename T>
 bool shared_future<T>::valid() const
 {
-	return m_impl;
+	return static_cast<bool>(m_impl);
 }
 
 template<typename T>

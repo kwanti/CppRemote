@@ -14,8 +14,14 @@
 #include <boost/type_traits/is_pointer.hpp>
 #include <boost/type_traits/is_array.hpp>
 #include <boost/static_assert.hpp>
+#include <boost/version.hpp>
 #include <set>
 
+#if (BOOST_VERSION >= 105600)
+#include <boost/serialization/singleton.hpp>	// workaround compile error in gcc mingw
+#include <boost/serialization/extended_type_info.hpp>
+#include <boost/serialization/shared_ptr_helper.hpp>
+#endif
 
 namespace remote
 {
@@ -33,6 +39,28 @@ public:
 	{
 		m_container = container;
 	}
+
+#if (BOOST_VERSION >= 105600)
+	template<template<typename> class SPT, typename T>
+	void reset(SPT<T>& sp, T* t)
+	{
+		reset_this(sp, t);
+	}
+private:
+	template<template<typename> class SPT, typename T>
+	void reset_this(SPT<T>& sp, T* t)
+	{
+		typedef boost::serialization::shared_ptr_helper<SPT> helper;
+		this_archive()->template get_helper<helper>().reset(sp, t);
+	}
+#else
+private:
+	template<template<typename> class SPT, typename T>
+	void reset_this(SPT<T>& sp, T* t)
+	{
+		this_archive()->reset(sp, t);
+	}
+#endif
 
 protected:
 	pointer_tracker()
@@ -65,7 +93,7 @@ private:
 			return;
 
 		boost::shared_ptr<T> sp;
-		this_archive()->reset(sp, t);
+		reset_this(sp, t);
 
 		BOOST_ASSERT(sp);
 		BOOST_ASSERT(sp.get() == t);

@@ -11,6 +11,12 @@
 
 #include <remote/detail/param.hpp>
 
+#include <boost/version.hpp>
+#if (BOOST_VERSION >= 105600)	// workaround compile error in gcc mingw
+#include <boost/serialization/singleton.hpp>
+#include <boost/serialization/extended_type_info.hpp>
+#endif
+
 #include <boost/serialization/item_version_type.hpp>
 #include <boost/serialization/serialization.hpp>
 #include <boost/serialization/split_free.hpp>
@@ -98,7 +104,9 @@ void save(Archive& ar, remote::detail::param<T&> const& p, unsigned int const)
 template<typename Archive, typename T>
 void load(Archive& ar, remote::detail::param<T&>& p, unsigned int const)
 {
-	ar >> make_nvp("param", p.m_ptr);
+	typename boost::remove_const<T>::type* ptr;
+	ar >> make_nvp("param", ptr);
+	p.m_ptr = ptr;
 }
 
 template<typename Archive, typename T>
@@ -110,7 +118,9 @@ void save(Archive& ar, remote::detail::param<T*> const& p, unsigned int const)
 template<typename Archive, typename T>
 void load(Archive& ar, remote::detail::param<T*>& p, unsigned int const)
 {
-	ar >> make_nvp("param", p.m_ptr);
+	typename boost::remove_const<T>::type* ptr;
+	ar >> make_nvp("param", ptr);
+	p.m_ptr = ptr;
 }
 
 template<typename Archive, typename T>
@@ -122,7 +132,10 @@ void save(Archive& ar, remote::detail::param<shared_ptr<T> > const& p, unsigned 
 template<typename Archive, typename T>
 void load(Archive& ar, remote::detail::param<shared_ptr<T> >& p, unsigned int const)
 {
-	ar >> make_nvp("param", p.m_ptr);
+	typedef typename boost::remove_const<T>::type U;
+	shared_ptr<U> ptr;
+	ar >> make_nvp("param", ptr);
+	p.m_ptr = ptr;
 }
 
 template<typename Archive, typename T>

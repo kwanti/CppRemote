@@ -26,6 +26,9 @@
 #include <boost/archive/detail/register_archive.hpp>
 #include <istream>
 
+
+#if (BOOST_VERSION < 105600)
+
 #ifdef BOOST_MSVC
 #  pragma warning(push)
 #  pragma warning(disable : 4100)
@@ -41,6 +44,8 @@
 #pragma warning(pop)
 #endif
 
+#endif
+
 namespace remote
 {
 namespace archive
@@ -48,7 +53,9 @@ namespace archive
 
 class xml_iarchive
 : public xml_iarchive_impl<xml_iarchive>
+#if (BOOST_VERSION < 105600)
 , public boost::archive::detail::shared_ptr_helper
+#endif
 , public pointer_tracker<xml_iarchive>
 {
 public:
