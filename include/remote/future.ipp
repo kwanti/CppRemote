@@ -54,7 +54,7 @@ shared_future<T> future<T>::share()
 template<typename T>
 bool future<T>::valid() const
 {
-	return m_impl;
+	return static_cast<bool>(m_impl);
 }
 
 template<typename T>

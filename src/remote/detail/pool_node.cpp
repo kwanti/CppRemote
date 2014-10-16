@@ -48,7 +48,7 @@ void pool_node::register_pool(proxy_pool_ptr const& pool)
 
 	boost::lock_guard<boost::mutex> lock(m_mutex);
 	proxy_pools::iterator iter = std::find_if(m_proxy_pools.begin(), m_proxy_pools.end(),
-									boost::bind(has_link_id, _1, boost::cref(pool->link_id())));
+									boost::bind(has_link_id, _1, pool->link_id()));
 	if(iter == m_proxy_pools.end())
 	{
 		m_proxy_pools.push_back(pool);
@@ -62,7 +62,7 @@ void pool_node::unregister_pool(proxy_pool_ptr const& pool)
 {
 	boost::lock_guard<boost::mutex> lock(m_mutex);
 	proxy_pools::iterator iter = std::find_if(m_proxy_pools.begin(), m_proxy_pools.end(),
-									boost::bind(has_link_id, _1, boost::cref(pool->link_id())));
+									boost::bind(has_link_id, _1, pool->link_id()));
 	if(iter == m_proxy_pools.end())
 		return;
 
