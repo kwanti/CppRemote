@@ -24,7 +24,10 @@
 #include <remote/archive/pointer_tracker.hpp>
 
 #include <boost/archive/detail/register_archive.hpp>
+#include <boost/archive/binary_iarchive_impl.hpp>
 #include <istream>
+
+#if (BOOST_VERSION < 105600)
 
 #ifdef BOOST_MSVC
 #  pragma warning(push)
@@ -41,8 +44,7 @@
 #pragma warning(pop)
 #endif
 
-#include <boost/archive/binary_iarchive_impl.hpp>
-
+#endif
 
 namespace remote
 {
@@ -52,7 +54,9 @@ namespace archive
 class binary_iarchive
 : public boost::archive::binary_iarchive_impl<binary_iarchive,
 			std::istream::char_type, std::istream::traits_type>
+#if (BOOST_VERSION < 105600)
 , public boost::archive::detail::shared_ptr_helper
+#endif
 , public pointer_tracker<binary_iarchive>
 {
 	typedef boost::archive::binary_iarchive_impl<binary_iarchive,
