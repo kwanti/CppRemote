@@ -13,7 +13,7 @@ if(NOT Boost_FOUND)
 
 	find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono)
 	if(NOT Boost_FOUND)
-		set(BOOST_ROOT "C:/Program Files/boost/boost_1_50_0")		# if not set, it will let cmake to find it.
+		set(BOOST_ROOT "C:/boost/boost_1_50_0")						# if not set, it will let cmake to find it.
 		set(BOOST_LIBRARYDIR ${BOOST_ROOT}/stage/lib/x86)			# might need to set this too.
 		set(Boost_NO_SYSTEM_PATHS ON)								# default is OFF, set to ON if BOOST_ROOT is set
 		find_package(Boost 1.50.0 COMPONENTS serialization thread system chrono REQUIRED)
