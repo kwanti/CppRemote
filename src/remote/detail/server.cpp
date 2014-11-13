@@ -23,6 +23,26 @@ namespace remote
 namespace detail
 {
 
+
+template<typename Iter, typename Pred>
+Iter remove_if_(Iter first, Iter last, Pred pred)
+{
+	first = std::find_if(first, last, pred);
+	if(first == last)
+		return first;
+
+	Iter result = first;
+	++first;
+	for(; first != last; ++first)
+	if(!pred(*first))
+	{
+		*result = boost::move(*first);
+		++result;
+	}
+	return result;
+}
+
+
 server::server(pool_node_ptr const& node, io_service& ios)
 : m_io_service(ios)
 , m_strand(ios)
@@ -152,7 +172,7 @@ void server::on_accept(exception_ptr _exception, comm_link_ptr link)
 	BOOST_ASSERT(m_state == started);
 
 	// remove stopped and invalid sessions from server
-	m_sessions.erase(std::remove_if(m_sessions.begin(), m_sessions.end(),
+	m_sessions.erase(remove_if_(m_sessions.begin(), m_sessions.end(),
 		is_not_active_session), m_sessions.end());
 
 	sessions::iterator iter = m_sessions.emplace(link).first;
