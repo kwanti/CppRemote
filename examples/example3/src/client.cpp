@@ -10,7 +10,7 @@
 #include <remote/global.hpp>
 #include <remote/make_basic_binding.hpp>
 #include <remote/bindings/binary_serializer.hpp>
-#include <remote/bindings/icp_transport.hpp>
+#include <remote/bindings/ipc_transport.hpp>
 
 #ifdef REMOTE_USER_REGISTER_ARCHIVE
 #include <remote/register_archive.ipp>
