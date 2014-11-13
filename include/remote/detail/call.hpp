@@ -18,7 +18,7 @@
 #include <boost/smart_ptr/make_shared.hpp>
 #include <boost/serialization/access.hpp>
 #include <boost/serialization/nvp.hpp>
-#include <set>
+#include <vector>
 
 #ifdef BOOST_MSVC
 #pragma warning(push)
@@ -80,13 +80,13 @@ public:
 
 protected:
 	friend class result;
-	typedef std::set<boost::shared_ptr<void const> > container_type;
+	typedef std::vector<boost::shared_ptr<void const> > container_type;
 
 protected:
 	call_id m_id;
+	bool m_ready;
 	object_vid m_object_id;
 
-	bool m_ready;
 	exception_ptr m_exception;
 	container_type m_pointers;
 

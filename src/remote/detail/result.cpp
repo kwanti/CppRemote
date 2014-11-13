@@ -23,8 +23,8 @@ namespace detail
 
 result::result()
 : m_id(static_cast<call_id>(-1))
-, m_timeout_time(time_point::max())
 , m_ready(false)
+, m_timeout_time(time_point::max())
 , m_io_service(0)
 {}
 
