@@ -19,6 +19,7 @@
 
 #if (BOOST_VERSION >= 105600)
 #include <boost/serialization/singleton.hpp>	// workaround compile error in gcc mingw
+#include <boost/serialization/type_info_implementation.hpp>
 #include <boost/serialization/extended_type_info.hpp>
 #include <boost/serialization/shared_ptr_helper.hpp>
 #endif
