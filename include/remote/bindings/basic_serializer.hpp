@@ -59,16 +59,12 @@ public:
 		BOOST_ASSERT(buf);
 		try
 		{
-			call_ptr _call;
-			{
-				std::istream stream(buf.get());
-				IArchive ar(stream, archive_flag);
+			std::istream stream(buf.get());
+			IArchive ar(stream, archive_flag);
 
-				call* temp = 0;
-				ar >> boost::serialization::make_nvp("call", temp);
-				ar.reset(_call, temp);
-			}
-			return _call;
+			call* temp = 0;
+			ar >> boost::serialization::make_nvp("call", temp);
+			return call_ptr(temp);
 		}
 		catch(boost::archive::archive_exception& e)
 		{

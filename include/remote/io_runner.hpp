@@ -26,16 +26,19 @@ public:
 	explicit io_runner(std::size_t concurrency);
 	~io_runner();
 	boost::asio::io_service& get_io_service();
+	boost::asio::io_service& get_idle_io_service();
 
 	static std::size_t poll_one(boost::asio::io_service& ios);
 
 private:
 	boost::thread_group m_threads;
 	boost::asio::io_service m_io_service;
+	boost::asio::io_service m_idle_io_service;
 	boost::optional<boost::asio::io_service::work> m_work;
 
 private:
 	void run();
+	void run_idle();
 	static std::size_t adjust_concurrency(std::size_t concurrency);
 };
 

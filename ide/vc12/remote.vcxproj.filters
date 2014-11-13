@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{aca6d60c-dddf-4270-b492-5920cfc3f004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{9fcff215-fbbe-45e5-b12e-69ae33476525}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote">
+      <UniqueIdentifier>{979b4247-eabb-4c5d-9bd7-5dfcdf92a1bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote">
+      <UniqueIdentifier>{51c6f5e8-65c0-4b81-9a23-53e598c09b94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\archive">
+      <UniqueIdentifier>{1a9b027d-64f3-4bd4-b707-237171f96f71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\bindings">
+      <UniqueIdentifier>{f065c2a8-729c-4996-b10a-319d1aed784a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\detail">
+      <UniqueIdentifier>{63d75629-d72d-4461-af74-ea1c51a55f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\idl">
+      <UniqueIdentifier>{b4379afe-9305-4f1d-877a-164d6e351e36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\idl\detail">
+      <UniqueIdentifier>{8e611128-f3a4-4609-b08d-2699edcaa5b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\serialization">
+      <UniqueIdentifier>{2165b947-22d1-44e9-87e4-96083af05dd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\remote\serialization\system">
+      <UniqueIdentifier>{655015a3-4a58-4662-ae33-e80d2aa83b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote\archive">
+      <UniqueIdentifier>{9d342515-9b3b-4e9b-89eb-5b2c13cab91e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote\bindings">
+      <UniqueIdentifier>{1c2f11fb-26be-44a7-bd4e-336b4ad3b677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote\detail">
+      <UniqueIdentifier>{09475d45-6a37-4775-ba9f-b51ba89fabbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote\serialization">
+      <UniqueIdentifier>{644ad9f4-d644-4786-ad1a-dea3b48723da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\remote\serialization\system">
+      <UniqueIdentifier>{7655e22b-d5be-45e3-8434-a643fcca2642}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\remote\archive_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\array.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\attribute.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\binding.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\exception.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\filter_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\future.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\future_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\fwd.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\global.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\idl.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\io_runner.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\list.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\make_basic_binding.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\make_ipc_binding.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\make_tcp_binding.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\map.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\pool_node.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\remote_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\server.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\session.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\set.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\shared_future.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\shared_ptr.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\system_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\target_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\transport_error.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\utility.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\vector.hpp">
+      <Filter>include\remote</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\archives.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\binary_iarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\binary_oarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\pointer_tracker.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\text_iarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\text_iarchive_impl.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\text_oarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\xml_iarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\xml_iarchive_impl.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\archive\xml_oarchive.hpp">
+      <Filter>include\remote\archive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\basic_acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\basic_binding.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\basic_channel.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\basic_serializer.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\binary_serializer.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\binding.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\buffer.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\buffer_pool.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\channel.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\fwd.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\ipc_transport.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\local_acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\local_endpoint.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\local_transport.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_endpoint.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_transport.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\no_filter.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\tcp_acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\tcp_endpoint.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\tcp_transport.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\text_serializer.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\udp_acceptor.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\udp_endpoint.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\udp_transport.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\xml_serializer.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\bindings\zlib_filter.hpp">
+      <Filter>include\remote\bindings</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\call.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\comm_link.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\comm_request.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\config.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\counter.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\direct_link.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\fwd.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_array.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_list.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_map.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_pair.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_set.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\marshal_vector.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\out_param.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\param.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\pointer_cast.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\pool_link.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\pool_node.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\proxy.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\proxy_pool.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\result.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\serialize_param.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\serialize_primitive.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\server.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\service.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\service_pool.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\stack_allocate.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\type_id.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\type_traits.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\utility.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\idl\class.hpp">
+      <Filter>include\remote\idl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\idl\register_class.hpp">
+      <Filter>include\remote\idl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\serialization\system\asio_categories.hpp">
+      <Filter>include\remote\serialization\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\serialization\system\error_categories.hpp">
+      <Filter>include\remote\serialization\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\serialization\system\error_code.hpp">
+      <Filter>include\remote\serialization\system</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\remote\detail\allocator.hpp">
+      <Filter>include\remote\detail</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\remote\future.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\pool_node.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\register_archive.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\session.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\session_invoke.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\session_invoke_declare.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\shared_future.ipp">
+      <Filter>include\remote</Filter>
+    </None>
+    <None Include="..\..\include\remote\archive\text_iarchive_impl.ipp">
+      <Filter>include\remote\archive</Filter>
+    </None>
+    <None Include="..\..\include\remote\archive\xml_iarchive_impl.ipp">
+      <Filter>include\remote\archive</Filter>
+    </None>
+    <None Include="..\..\include\remote\detail\comm_link_invoke.ipp">
+      <Filter>include\remote\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\detail\proxy_pool.ipp">
+      <Filter>include\remote\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\detail\service_invoke.ipp">
+      <Filter>include\remote\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\detail\service_pool.ipp">
+      <Filter>include\remote\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\proxy.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\proxy_impl.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\register_class.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\service.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\service_base.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+    <None Include="..\..\include\remote\idl\detail\undefine.ipp">
+      <Filter>include\remote\idl\detail</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\remote\exception.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\future_error.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\global.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\io_runner.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\pool_node.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\register_archive.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\server.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\session.cpp">
+      <Filter>src\remote</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\archive\binary_iarchive.cpp">
+      <Filter>src\remote\archive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\archive\text_iarchive.cpp">
+      <Filter>src\remote\archive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\archive\xml_iarchive.cpp">
+      <Filter>src\remote\archive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\buffer_pool.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\local_acceptor.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\local_transport.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\named_pipe_acceptor.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\named_pipe_transport.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_acceptor.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_endpoint.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_transport.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_acceptor.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_endpoint.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_transport.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\zlib_filter.cpp">
+      <Filter>src\remote\bindings</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\call.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\comm_link.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\direct_link.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\pool_link.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\pool_node.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\proxy.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\proxy_pool.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\result.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\server.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\service_pool.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\type_id.cpp">
+      <Filter>src\remote\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\serialization\system\error_categories.cpp">
+      <Filter>src\remote\serialization\system</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

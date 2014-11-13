@@ -136,7 +136,7 @@ Links
 |---------------|--------------------------------------------
 | Examples      | http://www.cppremote.com/examples.html
 | Documentation | http://www.cppremote.com/documentation.html
-| Mailing list  | http://www.cppremote.com/forum.html
+| Report Issue  | http://www.cppremote.com/forum.html
 | Download      | http://www.cppremote.com/download.html
 | GitHub        | https://github.com/kwanti/CppRemote
 

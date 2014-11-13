@@ -15,10 +15,11 @@
 #include <boost/type_traits/is_array.hpp>
 #include <boost/static_assert.hpp>
 #include <boost/version.hpp>
-#include <set>
+#include <vector>
 
 #if (BOOST_VERSION >= 105600)
 #include <boost/serialization/singleton.hpp>	// workaround compile error in gcc mingw
+#include <boost/serialization/type_info_implementation.hpp>
 #include <boost/serialization/extended_type_info.hpp>
 #include <boost/serialization/shared_ptr_helper.hpp>
 #endif
@@ -32,7 +33,7 @@ template<typename Archive>
 class pointer_tracker
 {
 public:
-	typedef std::set<boost::shared_ptr<void const> > container_type;
+	typedef std::vector<boost::shared_ptr<void const> > container_type;
 
 public:
 	void reset_container(container_type* container)
@@ -98,7 +99,7 @@ private:
 		BOOST_ASSERT(sp);
 		BOOST_ASSERT(sp.get() == t);
 
-		m_container->insert(sp);
+		m_container->push_back(sp);
 	}
 
 	template<typename T>

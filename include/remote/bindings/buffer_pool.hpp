@@ -36,10 +36,10 @@ private:
 
 private:
 	mutable boost::mutex m_mutex;
-	std::size_t m_size;
 	buffers_type m_buffers;
 
 	static bool is_unique(buffer_ptr const& buf);
+	static void release_buffer(buffer_ptr& buf);
 };
 
 }

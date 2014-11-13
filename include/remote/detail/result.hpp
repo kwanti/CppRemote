@@ -21,7 +21,6 @@
 #include <boost/thread/mutex.hpp>
 #include <boost/bind/bind.hpp>
 #include <boost/ref.hpp>
-#include <set>
 
 
 namespace remote
@@ -71,20 +70,20 @@ public:
 	}
 
 protected:
-	typedef std::set<boost::shared_ptr<void const> > collection_type;
+	typedef call::container_type container_type;
 	typedef boost::chrono::system_clock clock_type;
 	typedef boost::chrono::time_point<clock_type> time_point;
 
 protected:
 	call_id m_id;
+	mutable bool m_ready;
 	time_point m_timeout_time;
 
 	mutable boost::mutex m_mutex;
 	mutable boost::condition m_condition;
 
-	mutable bool m_ready;
 	mutable exception_ptr m_exception;
-	collection_type m_pointers;
+	container_type m_pointers;
 
 	boost::asio::io_service* m_io_service;
 

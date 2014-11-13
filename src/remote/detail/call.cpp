@@ -17,14 +17,14 @@ namespace detail
 
 call::call()
 : m_id(0)
-, m_object_id(0)
 , m_ready(false)
+, m_object_id(0)
 {}
 
 call::call(object_vid const& oid)
 : m_id(0)
-, m_object_id(oid)
 , m_ready(false)
+, m_object_id(oid)
 {}
 
 void call::set_exception(exception_ptr const& e)

@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMin|Win32">
+      <Configuration>ReleaseMin</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMin|x64">
+      <Configuration>ReleaseMin</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\remote\archive\archives.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\binary_iarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\binary_oarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\pointer_tracker.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\text_iarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\text_iarchive_impl.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\text_oarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\xml_iarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\xml_iarchive_impl.hpp" />
+    <ClInclude Include="..\..\include\remote\archive\xml_oarchive.hpp" />
+    <ClInclude Include="..\..\include\remote\archive_error.hpp" />
+    <ClInclude Include="..\..\include\remote\array.hpp" />
+    <ClInclude Include="..\..\include\remote\attribute.hpp" />
+    <ClInclude Include="..\..\include\remote\binding.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\basic_acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\basic_binding.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\basic_channel.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\basic_serializer.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\binary_serializer.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\binding.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\buffer.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\buffer_pool.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\channel.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\fwd.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\ipc_transport.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\local_acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\local_endpoint.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\local_transport.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_endpoint.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\named_pipe_transport.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\no_filter.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\tcp_acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\tcp_endpoint.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\tcp_transport.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\text_serializer.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\udp_acceptor.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\udp_endpoint.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\udp_transport.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\xml_serializer.hpp" />
+    <ClInclude Include="..\..\include\remote\bindings\zlib_filter.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\allocator.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\call.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\comm_link.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\comm_request.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\config.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\counter.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\direct_link.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\fwd.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_array.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_list.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_map.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_pair.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_set.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\marshal_vector.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\out_param.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\param.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\pointer_cast.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\pool_link.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\pool_node.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\proxy.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\proxy_pool.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\result.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\serialize_param.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\serialize_primitive.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\server.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\service.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\service_pool.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\stack_allocate.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\type_id.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\type_traits.hpp" />
+    <ClInclude Include="..\..\include\remote\detail\utility.hpp" />
+    <ClInclude Include="..\..\include\remote\error.hpp" />
+    <ClInclude Include="..\..\include\remote\exception.hpp" />
+    <ClInclude Include="..\..\include\remote\filter_error.hpp" />
+    <ClInclude Include="..\..\include\remote\future.hpp" />
+    <ClInclude Include="..\..\include\remote\future_error.hpp" />
+    <ClInclude Include="..\..\include\remote\fwd.hpp" />
+    <ClInclude Include="..\..\include\remote\global.hpp" />
+    <ClInclude Include="..\..\include\remote\idl.hpp" />
+    <ClInclude Include="..\..\include\remote\idl\class.hpp" />
+    <ClInclude Include="..\..\include\remote\idl\register_class.hpp" />
+    <ClInclude Include="..\..\include\remote\io_runner.hpp" />
+    <ClInclude Include="..\..\include\remote\list.hpp" />
+    <ClInclude Include="..\..\include\remote\make_basic_binding.hpp" />
+    <ClInclude Include="..\..\include\remote\make_ipc_binding.hpp" />
+    <ClInclude Include="..\..\include\remote\make_tcp_binding.hpp" />
+    <ClInclude Include="..\..\include\remote\map.hpp" />
+    <ClInclude Include="..\..\include\remote\pool_node.hpp" />
+    <ClInclude Include="..\..\include\remote\remote_error.hpp" />
+    <ClInclude Include="..\..\include\remote\serialization\system\asio_categories.hpp" />
+    <ClInclude Include="..\..\include\remote\serialization\system\error_categories.hpp" />
+    <ClInclude Include="..\..\include\remote\serialization\system\error_code.hpp" />
+    <ClInclude Include="..\..\include\remote\server.hpp" />
+    <ClInclude Include="..\..\include\remote\session.hpp" />
+    <ClInclude Include="..\..\include\remote\set.hpp" />
+    <ClInclude Include="..\..\include\remote\shared_future.hpp" />
+    <ClInclude Include="..\..\include\remote\shared_ptr.hpp" />
+    <ClInclude Include="..\..\include\remote\system_error.hpp" />
+    <ClInclude Include="..\..\include\remote\target_error.hpp" />
+    <ClInclude Include="..\..\include\remote\transport_error.hpp" />
+    <ClInclude Include="..\..\include\remote\utility.hpp" />
+    <ClInclude Include="..\..\include\remote\vector.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\remote\archive\text_iarchive_impl.ipp" />
+    <None Include="..\..\include\remote\archive\xml_iarchive_impl.ipp" />
+    <None Include="..\..\include\remote\detail\comm_link_invoke.ipp" />
+    <None Include="..\..\include\remote\detail\proxy_pool.ipp" />
+    <None Include="..\..\include\remote\detail\service_invoke.ipp" />
+    <None Include="..\..\include\remote\detail\service_pool.ipp">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="..\..\include\remote\future.ipp" />
+    <None Include="..\..\include\remote\idl\detail\proxy.ipp" />
+    <None Include="..\..\include\remote\idl\detail\proxy_impl.ipp" />
+    <None Include="..\..\include\remote\idl\detail\register_class.ipp" />
+    <None Include="..\..\include\remote\idl\detail\service.ipp" />
+    <None Include="..\..\include\remote\idl\detail\service_base.ipp" />
+    <None Include="..\..\include\remote\idl\detail\undefine.ipp" />
+    <None Include="..\..\include\remote\pool_node.ipp" />
+    <None Include="..\..\include\remote\register_archive.ipp" />
+    <None Include="..\..\include\remote\session.ipp" />
+    <None Include="..\..\include\remote\session_invoke.ipp" />
+    <None Include="..\..\include\remote\session_invoke_declare.ipp" />
+    <None Include="..\..\include\remote\shared_future.ipp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\remote\archive\binary_iarchive.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\archive\text_iarchive.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\archive\xml_iarchive.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\archive\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\buffer_pool.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\local_acceptor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\local_transport.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\named_pipe_acceptor.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\named_pipe_transport.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_acceptor.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_endpoint.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\tcp_transport.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_acceptor.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_endpoint.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\udp_transport.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\bindings\zlib_filter.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\bindings\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\call.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\comm_link.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\direct_link.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\pool_link.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\pool_node.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\proxy.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\proxy_pool.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\result.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\server.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\service_pool.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\detail\type_id.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\detail\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\exception.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\future_error.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\global.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\io_runner.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\pool_node.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\register_archive.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\serialization\system\error_categories.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\serialization\system\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\server.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="..\..\src\remote\session.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">$(IntDir)\remote\</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)\remote\</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C1F997A4-AA50-43FB-8100-C31CE70F0C1D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>remote</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="remote.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalOptions>/MP2 %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalOptions>/MP2 %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;REMOTE_USER_REGISTER_ARCHIVE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalOptions>/MP2 %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMin|x64'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_LIB;REMOTE_USER_REGISTER_ARCHIVE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalOptions>/MP2 %(AdditionalOptions)</AdditionalOptions>
+      <WarningLevel>Level4</WarningLevel>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

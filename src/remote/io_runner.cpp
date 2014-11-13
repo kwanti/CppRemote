@@ -26,7 +26,11 @@ io_runner::io_runner(std::size_t concurrency)
 , m_work(boost::in_place(boost::ref(m_io_service)))
 {
 	std::size_t c = adjust_concurrency(concurrency);
-	for(std::size_t i = 0; i < c; ++i)
+
+	BOOST_ASSERT(c > 0);
+	m_threads.create_thread(boost::bind(&io_runner::run_idle, this));
+
+	for(std::size_t i = 1; i < c; ++i)
 	{
 		m_threads.create_thread(boost::bind(&io_runner::run, this));
 	}
@@ -34,7 +38,7 @@ io_runner::io_runner(std::size_t concurrency)
 
 io_runner::~io_runner()
 {
-	m_work.reset();
+	m_work = boost::none;
 //	m_io_service.stop();
 	m_threads.join_all();
 }
@@ -44,17 +48,17 @@ boost::asio::io_service& io_runner::get_io_service()
 	return m_io_service;
 }
 
+boost::asio::io_service& io_runner::get_idle_io_service()
+{
+	return m_idle_io_service;
+}
+
 std::size_t io_runner::adjust_concurrency(std::size_t concurrency)
 {
 	if(concurrency == max)
-	{
 		concurrency = boost::thread::hardware_concurrency();
-		return (concurrency == 0)? 1: concurrency;
-	}
-	else
-	{
-		return concurrency;
-	}
+
+	return (concurrency == 0) ? 1 : concurrency;
 }
 
 void io_runner::run()
@@ -70,6 +74,29 @@ void io_runner::run()
 		std::cerr << "io service throw: " << e.what() << std::endl;
 	}
 	catch(...)
+	{
+		// not to continue on unknown exception
+		std::cerr << "io service throw !!!" << std::endl;
+	}
+	std::terminate();
+}
+
+void io_runner::run_idle()
+{
+	try
+	{
+		while (!!m_work)
+		{
+			m_io_service.poll();
+			m_idle_io_service.poll_one();
+		}
+		return;
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "io service throw: " << e.what() << std::endl;
+	}
+	catch (...)
 	{
 		// not to continue on unknown exception
 		std::cerr << "io service throw !!!" << std::endl;

@@ -18,9 +18,13 @@ namespace bindings
 {
 
 buffer_pool::buffer_pool(size_t size)
-: m_size(size)
 {
 	m_buffers.reserve(size);
+	for(size_t i = 0; i < size; ++i)
+	{
+		buffer_ptr buf = boost::make_shared<buffer>();
+		m_buffers.push_back(buf);
+	}
 }
 
 buffer_ptr buffer_pool::allocate()
@@ -32,13 +36,6 @@ buffer_ptr buffer_pool::allocate()
 		{
 			buffer_ptr& buf(*iter);
 			buf->consume(buf->size());
-			return buf;
-		}
-
-		if(m_buffers.size() < m_size)
-		{
-			buffer_ptr buf = boost::make_shared<buffer>();
-			m_buffers.push_back(buf);
 			return buf;
 		}
 	}
@@ -53,23 +50,29 @@ void buffer_pool::collect()
 	if(iter == m_buffers.end())
 		return;
 
-	m_buffers.erase(iter, m_buffers.end());
+	std::for_each(iter, m_buffers.end(), release_buffer);
 }
 
 void buffer_pool::collect_one()
 {
 	boost::lock_guard<boost::mutex> lock(m_mutex);
-	buffers_type::iterator iter = std::remove_if(m_buffers.begin(), m_buffers.end(), is_unique);
+	buffers_type::iterator iter = std::find_if(m_buffers.begin(), m_buffers.end(), is_unique);
 	if(iter == m_buffers.end())
 		return;
 
-	m_buffers.erase(iter);
+	release_buffer(*iter);
 }
 
 bool buffer_pool::is_unique(buffer_ptr const& buf)
 {
 	return buf.unique();
 }
+
+void buffer_pool::release_buffer(buffer_ptr& buf)
+{
+	buf = boost::make_shared<buffer>();
+}
+
 
 }
 }
