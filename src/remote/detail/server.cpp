@@ -151,9 +151,9 @@ void server::on_accept(exception_ptr _exception, comm_link_ptr link)
 	BOOST_ASSERT(m_accept_handler);
 	BOOST_ASSERT(m_state == started);
 
-	// remove stopped and invalid sessions here?
-	//m_sessions.erase(std::remove_if(m_sessions.begin(), m_sessions.end(),
-	//	is_not_active_session), m_sessions.end());
+	// remove stopped and invalid sessions from server
+	m_sessions.erase(std::remove_if(m_sessions.begin(), m_sessions.end(),
+		is_not_active_session), m_sessions.end());
 
 	sessions::iterator iter = m_sessions.emplace(link).first;
 	m_io_service.post(boost::bind(m_accept_handler, _exception, boost::ref(*iter)));
