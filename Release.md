@@ -1,3 +1,11 @@
+version 0.4
+- Server will delete disconnected session objects to free resource.
+- Update buffer_pool to better handle pool allocation.
+- Fix issues compiling with boost 1.56 and 1.57.
+- Fix issues compiling with MSVC2013.
+- Add project files for MSVC2013.
+- Tested with VC12, GCC4.9.1/MingGW64, GCC 4.8.1
+
 Version 0.3
 - Add filter element in bindings.
 - Add zlib_filter to support compression.
