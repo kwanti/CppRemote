@@ -24,7 +24,8 @@ int main()
 	// create session and connect to server
 	remote::session session;
 	session.start(remote::make_tcp_binding("localhost", 9999));
-	session.wait_for_ready();
+	if(session.wait_for_ready() != remote::session::started)
+		return -1;
 
 	// get a shared_ptr of remote_service
 	remote_service* service = session.get_raw<remote_service>("test");
